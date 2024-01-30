@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unused-modules
-import '@/assets/UI kit/fonts/Montserrat/Montserrat-VariableFont_wght.ttf';
+import '@/assets/ui-kit/fonts/Montserrat/Montserrat-VariableFont_wght.ttf';
 import { createRoot } from 'react-dom/client';
 
 import { App } from './components/App';
