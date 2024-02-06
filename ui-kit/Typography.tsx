@@ -1,50 +1,29 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
+
+import styles from './Typography.module.scss';
 
 interface TypographyProps {
   children?: string;
-  size?: string;
-  colour?: string;
-  weight?: number;
+  size?: 's'| 'm' | 'l';
+  color?: string;
+  weight?: 400 | 700;
   as?: 'h1' | 'h2' | 'div';
   upperCase?: boolean;
   style?: React.CSSProperties;
+  sizeMap?: { [key: string]: string };
 }
 
-const Typography: React.FC<TypographyProps> = ({
-  children,
-  size = '',
-  colour = '',
-  weight = '',
-  as = 'div',
-  upperCase = false,
-}) => {
-  const Text = as === 'h1' ? H1 : as === 'h2' ? H2 : DefaultText;
+const sizeMap = {
+  s: 'font-size: 12px;',
+  m: 'font-size: 19px;',
+  l: 'font-size: 24px;',
+};
 
+export const Typography = ({ children, as: Text = 'div', ...rest }: PropsWithChildren<TypographyProps>) => {
   return (
-    <Text
-      style={{
-        fontFamily: 'Montserrat',
-        fontSize: size,
-        color: colour,
-        fontWeight: weight,
-        textTransform: upperCase ? 'uppercase' : 'none',
-      }}
-    >
+    <Text {...rest} className={styles.typography} >
       {children}
     </Text>
   );
 };
 
-const H1: React.FC<TypographyProps> = ({ children, weight }) => {
-  return <h1 style={{ fontWeight: weight, fontFamily: 'Montserrat' }}>{children}</h1>;
-};
-
-const H2: React.FC<TypographyProps> = ({ children, weight }) => {
-  return <h2 style={{ fontWeight: weight, fontFamily: 'Montserrat' }}>{children}</h2>;
-};
-
-const DefaultText: React.FC<TypographyProps> = ({ children, weight }) => {
-  return <div style={{ fontWeight: weight, fontFamily: 'Montserrat' }}>{children}</div>;
-};
-
-export default Typography;
