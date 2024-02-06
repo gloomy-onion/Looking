@@ -33,8 +33,8 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     type: 'asset/resource',
   };
   const scssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+    test: /.(css|s[ac]ss)$/i,
+    use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
   };
   const tsLoader = {
     test: /\.tsx?$/,

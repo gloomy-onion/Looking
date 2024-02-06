@@ -1,0 +1,14 @@
+@import '../../src/variables';
+
+.typography {
+  font-family: Montserrat, sans-serif;
+}
+.dark100 {
+  color: $dark100;
+}
+.green {
+  color: $green;
+}
+.upperCase {
+  text-transform: uppercase;
+}
