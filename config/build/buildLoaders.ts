@@ -1,5 +1,6 @@
-import {ModuleOptions} from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import {ModuleOptions} from 'webpack';
+
 import {BuildOptions} from './types/types';
 
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
@@ -35,12 +36,24 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
-  }
+  };
+  const fontLoader = {
+    test: /\.ttf$/,
+    use: [
+      {
+        loader: 'ttf-loader',
+        options: {
+          name: './font/[hash].[ext]',
+        },
+      },
+    ]
+  };
 
   return [
+    fontLoader,
     scssLoader,
     tsLoader,
     assetLoader,
     svgrLoader
-  ]
+  ];
 }

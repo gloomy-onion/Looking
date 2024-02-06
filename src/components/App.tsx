@@ -1,7 +1,7 @@
 import React from 'react';
 
+import Typography from '@/assets/ui-kit/Typography';
+
 export const App = () => {
-  return (
-    <div> Hello world </div>
-  );
+  return <Typography as={'h1'}> Hello world </Typography>;
 };
