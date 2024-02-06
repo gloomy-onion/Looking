@@ -1,8 +1,8 @@
-// eslint-disable-next-line import/no-unused-modules
-import '@/assets/ui-kit/fonts/Montserrat/Montserrat-VariableFont_wght.ttf';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
+import './index.scss';
 
-import { App } from './components/App';
+import { App } from './App';
 
 const root = document.getElementById('root');
 
@@ -12,5 +12,4 @@ if (!root) {
 
 const container = createRoot(root);
 
-// eslint-disable-next-line react/react-in-jsx-scope
 container.render(<App />);
