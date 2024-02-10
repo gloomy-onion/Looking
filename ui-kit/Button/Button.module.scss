@@ -1,0 +1,28 @@
+@import '../../src/variables';
+
+button {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 19px 13px;
+}
+.outline{
+  background: linear-gradient(#fff, #fff) padding-box,
+  linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%) border-box;
+  border: 2px solid transparent;
+  border-radius: 30px;
+}
+
+.filled {
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
+  color: white;
+}
+
+.clear{
+  color: $purple;
+  border: none;
+  background: none;
+}
+
