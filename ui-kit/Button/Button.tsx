@@ -29,3 +29,5 @@ export const Button = ({ children, buttonType = 'filled', disabled = false }: Pr
     </button>
   );
 };
+
+  /* TODO: продумать как отключ калик если кнопка disabled */

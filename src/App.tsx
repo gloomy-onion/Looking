@@ -19,7 +19,7 @@ export const App = () => {
           filled button
         </Typography>
       </Button>
-      <Button buttonType={'outline'} >
+      <Button buttonType={'outline'} disabled>
         <Typography upperCase size={'s'} weight={700} color={'purple'}>
           outline button
         </Typography>
