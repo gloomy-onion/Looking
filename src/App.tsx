@@ -14,7 +14,7 @@ export const App = () => {
       <Typography as={'div'} weight={700} size={'l'}>
         hello div
       </Typography>
-      <Button buttonType={'filled'} disabled>
+      <Button buttonType={'filled'} >
         <Typography upperCase size={'s'} weight={700} color={'white'}>
           filled button
         </Typography>
