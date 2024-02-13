@@ -14,7 +14,7 @@ export const App = () => {
       <Typography as={'div'} weight={700} size={'l'}>
         hello div
       </Typography>
-      <Button buttonType={'filled'} >
+      <Button buttonType={'filled'}>
         <Typography upperCase size={'s'} weight={700} color={'white'}>
           filled button
         </Typography>
@@ -24,12 +24,12 @@ export const App = () => {
           outline button
         </Typography>
       </Button>
-      <Button buttonType={'clear'} >
+      <Button buttonType={'clear'} disabled>
         <Typography upperCase size={'s'} weight={700} color={'purple'}>
           clear button
         </Typography>
       </Button>
-      <Button buttonType={'withPicture'} >
+      <Button buttonType={'withPicture'}>
         <Typography upperCase size={'s'} weight={700} color={'white'}>
           Кнопка со стрелкой
         </Typography>

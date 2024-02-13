@@ -12,17 +12,19 @@ export const Button = ({ children, buttonType = 'filled', disabled = false }: Pr
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
-    setIsClicked(true);
-    setTimeout(() => {
-      setIsClicked(false);
-    }, 500);
+    if (!disabled) {
+      setIsClicked(true);
+      setTimeout(() => {
+        setIsClicked(false);
+      }, 500);
+    }
   };
 
-  // вот тут хз правильно или нет, я хотела анимацию на клик, не поняла, можно ли это было сделать ток на сиэси
+  // вот тут хз правильно или нет, я хотела анимацию на клик, не поняла, можно ли это было сделать ток на сиэсэс'
   return (
     <button
       disabled={disabled}
-      className={cn(styles.button, styles[buttonType], { [styles.clicked]: isClicked })}
+      className={cn(styles.button, styles[buttonType], { [styles.clicked]: isClicked})}
       onClick={handleClick}
     >
       {children}
@@ -30,4 +32,4 @@ export const Button = ({ children, buttonType = 'filled', disabled = false }: Pr
   );
 };
 
-  /* TODO: продумать как отключ калик если кнопка disabled */
+// короче на disabled кнопку почему то вешается анимация и кнопка проваливается, может это норм поведение но мне не нравится. Написала пока помню
