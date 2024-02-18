@@ -1,0 +1,81 @@
+@import '../../src/variables';
+
+.textField {
+  margin: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.textFieldInput {
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 320px;
+  padding: 14px;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  color: $dark75;
+}
+.textFieldInputCover {
+  border: 1px solid $dark25;
+  border-radius: 4px;
+  width: 320px;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: 4px;
+}
+.textFieldInput::placeholder {
+  color: $dark25;
+}
+
+.textFieldInputCover:hover, .textField:focus-visible {
+  border: 1px solid $dark50;
+  color: $dark75;
+}
+
+input[type='date'] {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  color: $dark50;
+  padding: 14px;
+  text-transform: uppercase;
+}
+
+input[type='date']::placeholder {
+  color: $dark25;
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.email::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: $purple;
+  position: absolute;
+  right: 13px;
+}
+
+.email::after {
+  right: 14px;
+  position: absolute;
+  color: $purple;
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+}

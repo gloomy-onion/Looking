@@ -4,7 +4,7 @@ import React, { PropsWithChildren } from 'react';
 import styles from './Typography.module.scss';
 
 interface TypographyProps {
-  size?: 's' | 'm' | 'l';
+  size?: 'xs' | 's' | 'm' | 'l';
   color?: 'dark100' | 'dark75' | 'dark50' | 'dark25' | 'dark5' | 'purple' | 'green' | 'white';
   weight?: 400 | 700;
   as?: 'h1' | 'h2' | 'div';
@@ -13,6 +13,7 @@ interface TypographyProps {
 }
 
 const sizeMap = {
+  xs: '12px',
   s: '14px',
   m: '19px',
   l: '24px',

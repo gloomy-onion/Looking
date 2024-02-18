@@ -1,10 +1,13 @@
 import React from 'react';
 
-import { Button, Typography } from '../ui-kit';
+import { Button, TextField, Typography } from '../ui-kit';
 
 export const App = () => {
   return (
     <>
+      <TextField />
+      <TextField label={'masked text field'} textFieldType={'date'} />
+      <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} />
       <Typography as={'h1'} color={'dark100'} upperCase>
         hello h1
       </Typography>
@@ -14,26 +17,10 @@ export const App = () => {
       <Typography as={'div'} weight={700} size={'l'}>
         hello div
       </Typography>
-      <Button buttonType={'filled'}>
-        <Typography upperCase size={'s'} weight={700} color={'white'}>
-          filled button
-        </Typography>
-      </Button>
-      <Button buttonType={'outline'} disabled>
-        <Typography upperCase size={'s'} weight={700} color={'purple'}>
-          outline button
-        </Typography>
-      </Button>
-      <Button buttonType={'clear'} disabled>
-        <Typography upperCase size={'s'} weight={700} color={'purple'}>
-          clear button
-        </Typography>
-      </Button>
-      <Button buttonType={'withPicture'}>
-        <Typography upperCase size={'s'} weight={700} color={'white'}>
-          Кнопка со стрелкой
-        </Typography>
-      </Button>
+      <Button buttonType={'filled'} label={'filled button'} />
+      <Button buttonType={'outline'} disabled label={'outline button'} />
+      <Button buttonType={'clear'} disabled label={'clear button'} />
+      <Button buttonType={'withPicture'} label={'Кнопка со стрелкой'} />
     </>
   );
 };
