@@ -1,0 +1,136 @@
+@import '../../src/variables';
+
+.dropdown{
+  margin: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.dropdownDefault {
+  align-items: center;
+  padding: 14px;
+  border: 1px solid $dark25;
+  border-radius:4px 4px 0 0;
+  width: 266px;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: 4px;
+}
+
+.dropdownExpanded {
+  border: 1px solid $dark25;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  width: 266px;
+  max-height: 159px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dropdownItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 14px;
+  height: 40px;
+}
+.dropdownItemButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.dropdownButtons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.plusBtn {
+  padding: 0;
+  margin: 5px 0 5px 14px;
+  border-radius: 50%;
+  border: 1px solid $dark25;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.plusBtn::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: $dark50;
+  height: 1px;
+  top: 14px;
+  left: 9px;
+  right: 8px;
+  z-index: 9;
+}
+
+.plusBtn::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: $dark50;
+  width: 1px;
+  left: 50%;
+  top: 9px;
+  bottom: 8px;
+  z-index: 9;
+}
+
+
+.minusBtn {
+  margin: 5px 14px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid $dark25;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.minusBtn::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: $dark50;
+  height: 1px;
+  top: 50%;
+  left: 9px;
+  right: 9px;
+  z-index: 9;
+}
+
+.disabled {
+  opacity: 0.4;
+  border-color: #787878;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.disabled::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #787878;
+  height: 2px;
+  top: 17px;
+  left: 10px;
+  right: 10px;
+  z-index: 9;
+}
+
+

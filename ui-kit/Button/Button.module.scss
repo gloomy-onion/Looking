@@ -53,6 +53,8 @@ button:active {
   color: $purple;
   border: none;
   background: none;
+  margin: 5px;
+  padding: 5px;
 }
 
 .clear:hover:not([disabled]) {
