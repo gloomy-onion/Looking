@@ -5,7 +5,7 @@ import { Button, Dropdown, TextField, Typography } from '../ui-kit';
 export const App = () => {
   return (
     <>
-      <Dropdown showDropDown />
+      <Dropdown />
       <TextField />
       <TextField label={'masked text field'} textFieldType={'date'} />
       <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} />

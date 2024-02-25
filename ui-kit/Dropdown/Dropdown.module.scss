@@ -1,23 +1,54 @@
 @import '../../src/variables';
 
-.dropdown{
+.dropdownCover {
   margin: 10px 30px;
   display: flex;
   flex-direction: column;
   border: none;
+  position: relative;
 }
 
-.dropdownDefault {
+.dropdown {
   align-items: center;
-  padding: 14px;
+  padding: 14px 0 14px 14px;
   border: 1px solid $dark25;
-  border-radius:4px 4px 0 0;
+  border-radius: 4px;
   width: 266px;
   height: 44px;
   display: flex;
   flex-direction: row;
-  position: relative;
+  justify-content: space-between;
   margin-top: 4px;
+  position: relative;
+}
+.dropdownBox{
+  position: relative;
+}
+.dropdownTopDefault {
+  border-radius: 4px;
+}
+
+.dropdownTopExpanded {
+  border-radius: 4px 4px 0 0;
+}
+
+.arrow {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: none;
+  margin: 0;
+}
+
+.arrow:after {
+  color: $dark75;
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(135deg);
 }
 
 .dropdownExpanded {
@@ -28,7 +59,7 @@
   max-height: 159px;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
 }
 
 .dropdownItem {
@@ -39,13 +70,15 @@
   margin: 5px 14px;
   height: 40px;
 }
+
 .dropdownItemButtons {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.dropdownButtons{
+
+.dropdownButtons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
