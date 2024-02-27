@@ -34,7 +34,7 @@ export const TextField = ({
           onChange={(e) => setInputValue(e.target.value)}
         />
         {textFieldType === 'email' &&
-          <div className={styles.email}/>}
+          <button className={styles.email}/>}
       </div>
     </div>
   );

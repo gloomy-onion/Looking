@@ -17,11 +17,11 @@ export const DropdownItem = ({ label = 'number 1' }: DropdownItemProps) => {
       </span>
       <div className={styles.dropdownItemButtons}>
         <button className={styles.minusBtn} />
-      <Typography size={'xs'} upperCase color={'dark100'} weight={700}>
-        {1}
-      </Typography>
-      <button className={styles.plusBtn} />
-    </div>
+        <Typography size={'xs'} upperCase color={'dark100'} weight={700}>
+          {1}
+        </Typography>
+        <button className={styles.plusBtn} />
+      </div>
     </div>
   );
 };

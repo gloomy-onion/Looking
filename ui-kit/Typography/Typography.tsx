@@ -26,7 +26,7 @@ export const Typography = ({
   weight = 400,
   upperCase = false,
   size = 'm',
-  style
+  style,
 }: PropsWithChildren<TypographyProps>) => {
   return (
     <Text

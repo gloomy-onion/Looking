@@ -1,8 +1,8 @@
 import cn from 'classnames';
-import React, {PropsWithChildren, useState} from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 
 import styles from './Button.module.scss';
-import {Typography} from '../Typography/Typography';
+import { Typography } from '../Typography/Typography';
 
 interface ButtonProps {
   disabled?: boolean;
@@ -11,10 +11,10 @@ interface ButtonProps {
 }
 
 export const Button = ({
-                         buttonType = 'filled',
-                         disabled = false,
-                         label = 'Click me'
-                       }: PropsWithChildren<ButtonProps>) => {
+  buttonType = 'filled',
+  disabled = false,
+  label = 'Click me',
+}: PropsWithChildren<ButtonProps>) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
@@ -39,10 +39,12 @@ export const Button = ({
   return (
     <button
       disabled={disabled}
-      className={cn(styles.button, styles[buttonType], {[styles.clicked]: isClicked})}
+      className={cn(styles.button, styles[buttonType], { [styles.clicked]: isClicked })}
       onClick={handleClick}
     >
-      <Typography size={'xs'} weight={700} upperCase color={labelColor}>{label}</Typography>
+      <Typography size={'xs'} weight={700} upperCase color={labelColor}>
+        {label}
+      </Typography>
     </button>
   );
 };
