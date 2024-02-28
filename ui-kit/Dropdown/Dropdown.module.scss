@@ -1,7 +1,6 @@
 @import '../../src/variables';
 
-.dropdownCover {
-  margin: 10px 30px;
+.dropdownWrapper {
   display: flex;
   flex-direction: column;
   border: none;
@@ -10,7 +9,7 @@
 
 .dropdown {
   align-items: center;
-  padding: 14px 0 14px 14px;
+  padding: 14px;
   border: 1px solid $dark25;
   border-radius: 4px;
   width: 266px;
@@ -35,11 +34,14 @@
 }
 
 .arrow {
+  position: absolute;
+  right: 0;
   width: 44px;
   height: 44px;
   border: none;
   background: none;
   margin: 0;
+  align-self: center;
 }
 
 .arrow:after {
@@ -51,6 +53,27 @@
   border-top: 2px solid;
   border-right: 2px solid;
   transform: rotate(135deg);
+}
+
+.arrowExpanded {
+  position: absolute;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: none;
+  margin: 0;
+  align-self: center;
+}
+.arrowExpanded:after {
+  color: $dark75;
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(-45deg);
 }
 
 .dropdownExpanded {
@@ -65,109 +88,3 @@
   z-index: 999;
   background-color: white;
 }
-
-.dropdownItem {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 5px 14px;
-  height: 40px;
-}
-
-.dropdownItemButtons {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.dropdownButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
-}
-
-.plusBtn {
-  padding: 0;
-  margin: 5px 0 5px 14px;
-  border-radius: 50%;
-  border: 1px solid $dark25;
-  width: 30px;
-  height: 30px;
-  background-color: rgb(255, 255, 255);
-  position: relative;
-}
-
-.plusBtn::after {
-  content: " ";
-  position: absolute;
-  display: block;
-  background-color: $dark50;
-  height: 1px;
-  top: 14px;
-  left: 9px;
-  right: 8px;
-  z-index: 9;
-}
-
-.plusBtn::before {
-  content: " ";
-  position: absolute;
-  display: block;
-  background-color: $dark50;
-  width: 1px;
-  left: 50%;
-  top: 9px;
-  bottom: 8px;
-  z-index: 9;
-}
-
-
-.minusBtn {
-  margin: 5px 14px;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid $dark25;
-  width: 30px;
-  height: 30px;
-  background-color: rgb(255, 255, 255);
-  position: relative;
-}
-
-.minusBtn::after {
-  content: " ";
-  position: absolute;
-  display: block;
-  background-color: $dark50;
-  height: 1px;
-  top: 50%;
-  left: 9px;
-  right: 9px;
-  z-index: 9;
-}
-
-.disabled {
-  opacity: 0.4;
-  border-color: #787878;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  background-color: rgb(255, 255, 255);
-  position: relative;
-}
-
-.disabled::after {
-  content: " ";
-  position: absolute;
-  display: block;
-  background-color: #787878;
-  height: 2px;
-  top: 17px;
-  left: 10px;
-  right: 10px;
-  z-index: 9;
-}
-
-

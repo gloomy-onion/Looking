@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import styles from './TextField.module.scss';
-import {Typography} from '../Typography/Typography';
+import { Typography } from '../Typography/Typography';
 
 interface TextFieldProps {
   placeholder?: string;
@@ -10,10 +10,10 @@ interface TextFieldProps {
 }
 
 export const TextField = ({
-                            placeholder = 'type sth',
-                            label = 'text field',
-                            textFieldType = 'text',
-                          }: TextFieldProps) => {
+  placeholder = 'type sth',
+  label = 'text field',
+  textFieldType = 'text',
+}: TextFieldProps) => {
   const [inputValue, setInputValue] = useState('');
 
   return (
@@ -33,8 +33,7 @@ export const TextField = ({
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        {textFieldType === 'email' &&
-          <button className={styles.email}/>}
+        {textFieldType === 'email' && <button className={styles.email} />}
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export const App = () => {
       <Button buttonType={'filled'} label={'filled button'} />
       <Button buttonType={'outline'} disabled label={'outline button'} />
       <Button buttonType={'clear'} disabled label={'clear button'} />
-      <Button buttonType={'withPicture'} label={'Кнопка со стрелкой'} />
+      <Button buttonType={'withIcon'} label={'Кнопка со стрелкой'} />
     </>
   );
 };

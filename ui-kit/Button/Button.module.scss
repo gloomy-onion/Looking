@@ -7,7 +7,6 @@ button {
   flex-direction: row;
   align-items: center;
   padding: 19px 13px;
-  margin: 10px;
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
@@ -16,7 +15,9 @@ button:disabled,
 button[disabled] {
   animation: none;
   opacity: 0.5;
+  transition: none;
   cursor: not-allowed;
+  transform: none;
 }
 
 button:active {
@@ -61,7 +62,7 @@ button:active {
   transform: scale(1.1);
 }
 
-.withPicture {
+.withIcon {
   border-radius: 30px;
   border: none;
   background: linear-gradient(180deg, rgba(188, 156, 255, 1) 0%, rgba(139, 164, 249, 1) 100%);
@@ -69,7 +70,7 @@ button:active {
   position: relative;
 }
 
-.withPicture:before {
+.withIcon:before {
   content: "";
   display: block;
   width: 20px;
@@ -79,7 +80,7 @@ button:active {
   right: 13px;
 }
 
-.withPicture:after {
+.withIcon:after {
   content: '';
   display: inline-block;
   width: 13px;
@@ -90,7 +91,7 @@ button:active {
   margin-left: 20px;
 }
 
-.withPicture:hover:not([disabled]) {
+.withIcon:hover:not([disabled]) {
   box-shadow: 0 0 10px 0 rgba(188, 156, 255, 1);
   transform: scale(1.04)
 }

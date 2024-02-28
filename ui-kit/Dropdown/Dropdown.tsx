@@ -11,14 +11,14 @@ interface DropdownProps {
 }
 
 export const Dropdown = ({ label = 'dropdown' }: DropdownProps) => {
-  const [showDropDown, setShowDropDown] = useState<boolean>(false);
+  const [showDropDown, setShowDropDown] = useState(false);
 
   const toggleDropDown = () => {
-    setShowDropDown(!showDropDown);
+    setShowDropDown((prevState) => !prevState);
   };
 
   return (
-    <div className={styles.dropdownCover}>
+    <div className={styles.dropdownWrapper}>
       {label && (
         <Typography color={'dark100'} size={'xs'} weight={700} upperCase>
           {label}
@@ -30,13 +30,13 @@ export const Dropdown = ({ label = 'dropdown' }: DropdownProps) => {
             [styles.dropdownTopExpanded]: showDropDown,
             [styles.dropdownDefault]: !showDropDown,
           })}
+          onClick={toggleDropDown}
         >
           <Typography color={'dark75'} size={'s'}>
             {'dropdown text'}
           </Typography>
-          <button className={styles.arrow} onClick={toggleDropDown} />
+          <button className={showDropDown ? styles.arrowExpanded : styles.arrow} />
         </div>
-        {/*  теперь я его блять не могу сделать белым сука */}
         {showDropDown && (
           <div className={styles.dropdownExpanded}>
             <ul>

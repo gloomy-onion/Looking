@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Dropdown.module.scss';
+import styles from './DropdownItem.module.scss';
 import { Typography } from '../Typography/Typography';
 
 interface DropdownItemProps {
