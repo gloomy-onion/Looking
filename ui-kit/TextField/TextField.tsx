@@ -17,6 +17,9 @@ export const TextField = ({
   textFieldType = 'text',
 }: TextFieldProps) => {
   const [inputValue, setInputValue] = useState('');
+  const clickClear = () => {
+    setInputValue('');
+  };
 
   return (
     <div className={styles.textField}>
@@ -35,7 +38,8 @@ export const TextField = ({
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        {hasButton && <button className={styles.email} />}
+        {inputValue && <button className={styles.clearButton} onClick={clickClear} />}
+        {hasButton && <button className={styles.subscription} />}
       </div>
     </div>
   );
