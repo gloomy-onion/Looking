@@ -7,9 +7,11 @@ interface TextFieldProps {
   placeholder?: string;
   textFieldType?: 'text' | 'date' | 'password' | 'email';
   label?: string;
+  hasButton?: boolean;
 }
 
 export const TextField = ({
+  hasButton = false,
   placeholder = 'type sth',
   label = 'text field',
   textFieldType = 'text',
@@ -33,10 +35,8 @@ export const TextField = ({
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        {textFieldType === 'email' && <button className={styles.email} />}
+        {hasButton && <button className={styles.email} />}
       </div>
     </div>
   );
 };
-
-// сколько же я ебалась с этой стрелкой ты представить себе не можешь я потом добавлю анимацию потому ято смотреть я на нее больше не могц

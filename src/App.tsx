@@ -8,7 +8,7 @@ export const App = () => {
       <Dropdown />
       <TextField />
       <TextField label={'masked text field'} textFieldType={'date'} />
-      <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} />
+      <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} hasButton />
       <Typography as={'h1'} color={'dark100'} upperCase>
         hello h1
       </Typography>
@@ -19,8 +19,8 @@ export const App = () => {
         hello div
       </Typography>
       <Button buttonType={'filled'} label={'filled button'} />
-      <Button buttonType={'outline'} disabled label={'outline button'} />
-      <Button buttonType={'clear'} disabled label={'clear button'} />
+      <Button buttonType={'outline'} label={'outline button'} />
+      <Button buttonType={'clear'} label={'clear button'} />
       <Button buttonType={'withIcon'} label={'Кнопка со стрелкой'} />
     </>
   );

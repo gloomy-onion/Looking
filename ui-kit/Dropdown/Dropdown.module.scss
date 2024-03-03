@@ -88,3 +88,9 @@
   z-index: 999;
   background-color: white;
 }
+
+.dropdownButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
