@@ -2,13 +2,41 @@
 
 .typography {
   font-family: Montserrat, sans-serif;
+  cursor: inherit;
 }
+
 .dark100 {
   color: $dark100;
 }
+
+.dark75 {
+  color: $dark75;
+}
+
+.dark50 {
+  color: $dark50;
+}
+
+.dark25 {
+  color: $dark25;
+}
+
+.dark5 {
+  color: $dark5;
+}
+
 .green {
   color: $green;
 }
+
+.purple {
+  color: $purple;
+}
+
+.white {
+  color: rgb(255, 255, 255);
+}
+
 .upperCase {
   text-transform: uppercase;
 }
