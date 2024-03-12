@@ -2,15 +2,16 @@ import cn from 'classnames';
 import React, { useState } from 'react';
 
 import styles from './Dropdown.module.scss';
-import { DropdownItem } from './DropdownItem';
 import { Button } from '../Button/Button';
 import { Typography } from '../Typography/Typography';
 
 interface DropdownProps {
   label?: string;
+  children: React.ReactNode;
+  value: string;
 }
 
-export const Dropdown = ({ label = 'dropdown' }: DropdownProps) => {
+export const DropdownContainer = ({ label = 'dropdown', children, value }: DropdownProps) => {
   const [showDropDown, setShowDropDown] = useState(false);
 
   const toggleDropDown = () => {
@@ -39,9 +40,7 @@ export const Dropdown = ({ label = 'dropdown' }: DropdownProps) => {
         </div>
         {showDropDown && (
           <div className={styles.dropdownExpanded}>
-            <ul>
-              <DropdownItem label={'sjjsjsj'} />
-            </ul>
+            {children}
             <div className={styles.dropdownButtons}>
               <Button label={'очистить'} buttonType={'clear'} />
               <Button label={'применить'} buttonType={'clear'} />

@@ -20,7 +20,6 @@ export const TextField = ({
   const clickClear = () => {
     setInputValue('');
   };
-
   return (
     <div className={styles.textField}>
       {label && (

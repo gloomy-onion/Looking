@@ -1,0 +1,15 @@
+@import '../../src/variables';
+
+.react-datepicker {
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  background-color: #fff;
+  color: $green;
+  border: 1px solid ;
+  border-radius: 50px;
+  display: inline-block;
+  position: relative;
+
+  // Reverting value set in .react-datepicker-popper
+  line-height: initial;
+}
