@@ -7,11 +7,12 @@ import { Typography } from '../Typography/Typography';
 
 interface DropdownProps {
   label?: string;
-  children: React.ReactNode;
-  value: string;
+  children?: React.ReactNode;
+  value?: string | null;
+  placeholder?: string;
 }
 
-export const DropdownContainer = ({ label = 'dropdown', children, value }: DropdownProps) => {
+export const DropdownContainer = ({ label = 'dropdown', children, value, placeholder }: DropdownProps) => {
   const [showDropDown, setShowDropDown] = useState(false);
 
   const toggleDropDown = () => {
@@ -34,7 +35,7 @@ export const DropdownContainer = ({ label = 'dropdown', children, value }: Dropd
           onClick={toggleDropDown}
         >
           <Typography color={'dark75'} size={'s'}>
-            {'dropdown text'}
+            {value}
           </Typography>
           <button className={showDropDown ? styles.arrowExpanded : styles.arrow} />
         </div>

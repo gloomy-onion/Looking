@@ -1,15 +1,21 @@
 @import '../../src/variables';
 
-.react-datepicker {
-  font-family: Montserrat, sans-serif;
-  font-size: 24px;
-  background-color: #fff;
-  color: $green;
-  border: 1px solid ;
-  border-radius: 50px;
-  display: inline-block;
-  position: relative;
+.calendar {
+  font-family: Montserrat sans-serif;
+  font-size: 12px;
+  border: none;
+}
+.calendar.react-datepicker__navigation {
+  background: #787878;
+}
 
-  // Reverting value set in .react-datepicker-popper
-  line-height: initial;
+
+.disabled {
+  color: $dark25;
+}
+
+.currentDay {
+  color: white;
+  background: linear-gradient(180deg, rgba(111, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+  border-radius: 50%;
 }
