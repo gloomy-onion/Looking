@@ -1,5 +1,6 @@
 import React from 'react';
 
+// @ts-ignore
 import styles from './DropdownItem.module.scss';
 import { Typography } from '../Typography/Typography';
 
