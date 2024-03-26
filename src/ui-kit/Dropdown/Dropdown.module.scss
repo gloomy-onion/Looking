@@ -1,4 +1,4 @@
-@import '../../src/variables';
+@import '../../variables';
 
 .dropdownWrapper {
   display: flex;
@@ -12,7 +12,7 @@
   padding: 14px;
   border: 1px solid $dark25;
   border-radius: 4px;
-  width: 266px;
+  width: 322px;
   height: 44px;
   display: flex;
   flex-direction: row;
@@ -65,6 +65,7 @@
   margin: 0;
   align-self: center;
 }
+
 .arrowExpanded:after {
   color: $dark75;
   content: '';
@@ -80,7 +81,7 @@
   border: 1px solid $dark25;
   border-top: 0;
   border-radius: 0 0 4px 4px;
-  width: 266px;
+  width: auto;
   display: flex;
   flex-direction: column;
   position: absolute;

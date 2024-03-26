@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {Button, PickDate, TextField, Typography} from '../ui-kit';
+import { Button, PickDate, TextField, Typography } from './ui-kit';
 
 export const App = () => {
   return (
     <>
-      <PickDate/>
+      <PickDate />
       <TextField />
       <TextField label={'masked text field'} textFieldType={'date'} />
       <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} hasButton />
