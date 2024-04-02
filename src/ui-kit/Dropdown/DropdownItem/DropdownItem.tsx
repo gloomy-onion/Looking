@@ -1,8 +1,7 @@
 import React from 'react';
 
-// @ts-ignore
 import styles from './DropdownItem.module.scss';
-import { Typography } from '../Typography/Typography';
+import { Typography } from '../../Typography/Typography';
 
 interface DropdownItemProps {
   label: string;
@@ -10,6 +9,7 @@ interface DropdownItemProps {
 
 export const DropdownItem = ({ label = 'number 1' }: DropdownItemProps) => {
   return (
+
     <div className={styles.dropdownItem}>
       <span>
         <Typography size={'xs'} upperCase color={'dark100'} weight={700}>

@@ -6,16 +6,13 @@
   border: none;
 }
 
-
 .disabled {
   color: $dark25;
 }
 
-
-
 .currentDay {
   color: white;
-  background: linear-gradient(180deg, rgba(111, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+  background: linear-gradient(180deg, $green 0%, rgba(102, 210, 234, 1) 100%);
   border-radius: 50%;
   font-weight: 700;
 }

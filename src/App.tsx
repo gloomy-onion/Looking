@@ -7,7 +7,7 @@ export const App = () => {
     <>
       <Checkbox checkboxType={'toggle'} label={'toggle'}/>
       <Checkbox checkboxType={'checkbox'}/>
-      <PickDate />
+     <div style={{width: '322px'}}> <PickDate /></div>
       <TextField />
       <TextField label={'masked text field'} textFieldType={'date'} />
       <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} hasButton />

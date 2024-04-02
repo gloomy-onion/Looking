@@ -7,8 +7,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import styles from './DatePicker.module.scss';
 import './styles.css';
 import { PLACEHOLDER } from './constants';
+import { getDateTimestamp, getDateValue, getToday } from './helpers';
 import { DropdownContainer } from '..';
-import { getDateTimestamp } from '../helpers';
 
 interface DatePickerProps {
   selectsStart?: boolean;
@@ -20,21 +20,12 @@ interface DatePickerProps {
   onChange?: (date: Date | null) => void;
 }
 
-const getDateValue = (start: Date | null, end: Date | null) => {
-  if (start && end) {
-    return `${start?.toLocaleDateString()} - ${end?.toLocaleDateString()}`;
-  }
-
-  return PLACEHOLDER;
-};
-
 registerLocale('ru', ru);
 
 export const PickDate: React.FC<DatePickerProps> = () => {
   const [rangeStart, setRangeStart] = useState<Date | null>(new Date());
   const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
-  const today = new Date();
-  const midnightToday = today.setHours(0, 0, 0, 0);
+  const { today, midnightToday } = getToday();
 
   const onChange = (dates: [Date | null, Date | null]) => {
     const [start, end] = dates;
@@ -48,7 +39,6 @@ export const PickDate: React.FC<DatePickerProps> = () => {
         locale="ru"
         inline
         selectsRange
-        wrapperClassName={styles.calendarWrapper}
         selected={rangeStart}
         minDate={today}
         startDate={rangeStart}
