@@ -5,7 +5,8 @@ import {Button, Checkbox, PickDate, TextField, Typography} from './ui-kit';
 export const App = () => {
   return (
     <>
-      <Checkbox/>
+      <Checkbox checkboxType={'toggle'} label={'toggle'}/>
+      <Checkbox checkboxType={'checkbox'}/>
       <PickDate />
       <TextField />
       <TextField label={'masked text field'} textFieldType={'date'} />

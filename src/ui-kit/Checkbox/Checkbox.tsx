@@ -8,17 +8,12 @@ interface CheckboxProps {
   label?: string;
 }
 
-export const Checkbox = ({ checkboxType, label = 'checkbox' }: CheckboxProps) => {
-  const [isChecked, setIsChecked] = useState(false);
-
+export const Checkbox = ({ checkboxType = 'checkbox', label = 'checkbox' }: CheckboxProps) => {
+  const [isClicked, setIsClicked] = useState(false);
+  const handleChange = () => setIsClicked((prev) => !prev);
   return (
     <div className={styles.checkboxWrapper}>
-      <input
-        className={isChecked ? styles.checked : ''}
-        type={'checkbox'}
-        checked={isChecked}
-        onChange={() => setIsChecked((prev) => !prev)}
-      />
+      <input className={styles[checkboxType]} type={'checkbox'} checked={isClicked} onChange={handleChange} />
       <div className={styles.checkboxLabel}>
         <Typography size={'s'} color={'dark50'}>
           {label}
