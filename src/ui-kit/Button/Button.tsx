@@ -2,8 +2,8 @@ import cn from 'classnames';
 import React, { PropsWithChildren } from 'react';
 
 import styles from './Button.module.scss';
+import { getLabelColor } from './helpers';
 import { Typography } from '../Typography/Typography';
-import { getLabelColor } from '../helpers';
 
 interface ButtonProps {
   disabled?: boolean;

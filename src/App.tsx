@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { Button, Dropdown, TextField, Typography } from '../ui-kit';
+import {Button, Checkbox, PickDate, TextField, Typography} from './ui-kit';
 
 export const App = () => {
   return (
     <>
-      <Dropdown />
+      <Checkbox checkboxType={'toggle'} label={'toggle'}/>
+      <Checkbox checkboxType={'checkbox'}/>
+     <div style={{width: '322px'}}> <PickDate /></div>
       <TextField />
       <TextField label={'masked text field'} textFieldType={'date'} />
       <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} hasButton />
