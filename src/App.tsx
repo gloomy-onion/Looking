@@ -1,11 +1,12 @@
 import React from 'react';
 
-import {Button, Checkbox, PickDate, RadioButton, RangeSlider, TextField, Typography} from './ui-kit';
+import { Button, Checkbox, PickDate, RadioButton, RangeSlider, Rating, TextField, Typography } from './ui-kit';
 
 export const App = () => {
   return (
     <>
-      <RadioButton label={'radio'}/>
+      <Rating />
+      <RadioButton label={'radio'} />
       <div style={{ width: '266px' }}>
         <RangeSlider label={'Slider'} description={'description'} range={'range'} />
       </div>

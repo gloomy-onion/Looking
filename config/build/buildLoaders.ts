@@ -29,8 +29,8 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     ],
   };
   const assetLoader = {
-    test: /\.(png|jpg|jpeg|gif)$/i,
-    type: 'asset/resource',
+    test: /\.(png|jp(e*)g|svg|gif)$/,
+    type: "asset/resource",
   };
   const scssLoader = {
     test: /.(css|s[ac]ss)$/i,
