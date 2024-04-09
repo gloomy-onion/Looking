@@ -7,3 +7,4 @@ export { Checkbox } from './Checkbox/Checkbox';
 export { RangeSlider } from './RangeSlider/RangeSlider';
 export { RadioButton } from './Button/RadioButton/RadioButton';
 export { Rating } from './Rating/Rating';
+export { Collapse } from './Collapse/Collapse';
