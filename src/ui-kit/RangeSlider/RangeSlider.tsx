@@ -2,8 +2,7 @@ import React from 'react';
 import ReactSlider from 'react-slider';
 
 import styles from './RangeSlider.module.scss';
-import {Typography} from '../Typography/Typography';
-
+import { Typography } from '../Typography/Typography';
 
 interface RangeSliderProps {
   label?: string;
@@ -11,7 +10,7 @@ interface RangeSliderProps {
   range?: string;
 }
 
-export const RangeSlider = ({label, description}: RangeSliderProps) => {
+export const RangeSlider = ({ label, description }: RangeSliderProps) => {
   const [value, setValue] = React.useState([25, 50]);
 
   return (
@@ -28,9 +27,9 @@ export const RangeSlider = ({label, description}: RangeSliderProps) => {
         value={value}
         className={styles.horizontalSlider}
         thumbClassName={styles.exampleThumb}
-        trackClassName={`${styles.exampleTrack}-1`}
+        trackClassName={styles.exampleTrack}
         onChange={(newValue) => setValue(newValue)}
-        renderThumb={(props) => <div {...props}/>}
+        renderThumb={(props) => <div {...props} />}
       />
       <Typography size={'xs'} color={'dark50'}>
         {description}

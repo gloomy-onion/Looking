@@ -9,28 +9,11 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
   const svgrLoader = {
     test: /\.svg$/i,
     issuer: /\.[jt]sx?$/,
-    use: [
-      {
-        loader: '@svgr/webpack',
-        options: {
-          icon: true,
-          svgoConfig: {
-            plugins: [
-              {
-                name: 'convertColours',
-                params: {
-                  currentColor: true,
-                },
-              },
-            ],
-          },
-        },
-      },
-    ],
+    use: [{ loader: '@svgr/webpack', options: { icon: true } }],
   };
   const assetLoader = {
     test: /\.(png|jp(e*)g|svg|gif)$/,
-    type: "asset/resource",
+    type: 'asset/resource',
   };
   const scssLoader = {
     test: /.(css|s[ac]ss)$/i,

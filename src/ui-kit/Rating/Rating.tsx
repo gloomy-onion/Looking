@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import styles from './Rating.module.scss';
-import Star from "../../assets/img/Star.svg";
+import Star from '../../assets/img/Star.svg';
 
 export const Rating = () => {
   const [rating, setRating] = useState(0);
@@ -10,6 +10,7 @@ export const Rating = () => {
     <div className={styles.ratingContainer}>
       {[...Array(5)].map((star, index) => {
         index += 1;
+        // @ts-ignore
         return (
           <>
             <button
@@ -20,7 +21,7 @@ export const Rating = () => {
               onMouseEnter={() => setHover(index)}
               onMouseLeave={() => setHover(rating)}
              />
-            {/*<img src={Star}/>*/}
+            {/*<Star/>*/}
           </>
         );
       })}
