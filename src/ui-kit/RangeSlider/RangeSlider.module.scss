@@ -41,11 +41,14 @@
   border-radius: 100px;
   height: 6px;
   border: rgba(31, 32, 65, 0.25) 1px solid;
+
+  &[class*="-1"] {
+    background: linear-gradient(180deg, rgba(11, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+    border: none;
+  }
 }
 
-.exampleTrack-1 {
-  background: linear-gradient(180deg, rgba(11, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%) !important;
-  border: none;
-}
+
+
 
 

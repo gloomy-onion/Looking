@@ -8,13 +8,22 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 
   const svgrLoader = {
     test: /\.svg$/i,
-    issuer: /\.[jt]sx?$/,
-    use: [{ loader: '@svgr/webpack', options: { icon: true } }],
+    issuer: {
+      and: [/\.(js|ts)x?$/],
+    },
+    use: [
+      { loader: '@svgr/webpack', options: { icon: true } },
+      {
+        loader: 'file-loader',
+      },
+    ],
   };
+
   const assetLoader = {
-    test: /\.(png|jp(e*)g|svg|gif)$/,
+    test: /\.(png|jp(e*)g|gif)$/,
     type: 'asset/resource',
   };
+
   const scssLoader = {
     test: /.(css|s[ac]ss)$/i,
     use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
