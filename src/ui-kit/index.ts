@@ -8,3 +8,4 @@ export { RangeSlider } from './RangeSlider/RangeSlider';
 export { RadioButton } from './Button/RadioButton/RadioButton';
 export { Rating } from './Rating/Rating';
 export { Collapse } from './Collapse/Collapse';
+export { LikeButton } from './Button/LikeButton/LikeButton'

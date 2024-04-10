@@ -1,10 +1,22 @@
 import React from 'react';
 
-import {Button, Checkbox, Collapse, PickDate, RadioButton, RangeSlider, Rating, TextField, Typography} from './ui-kit';
+import {
+  Button,
+  Checkbox,
+  Collapse,
+  LikeButton,
+  PickDate,
+  RadioButton,
+  RangeSlider,
+  Rating,
+  TextField,
+  Typography
+} from './ui-kit';
 
 export const App = () => {
   return (
     <>
+      <LikeButton />
       <div style={{ width: '266px' }}>
         <Collapse label={'Collapse'}/>
       </div>
