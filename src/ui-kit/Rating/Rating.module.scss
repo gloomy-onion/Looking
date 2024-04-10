@@ -5,23 +5,6 @@
   flex-direction: row;
 }
 
-.star {
-  color: $purple;
-  width: 24px;
-  height: 24px;
-}
-
-//button {
-//  background-color: transparent;
-//  border: none;
-//  outline: none;
-//  cursor: pointer;
-//  width: 24px;
-//  height: 24px;
-//}
-.on {
-  color: #000;
-}
-.off {
-  color: #ccc;
+.starContainer {
+  cursor: pointer;
 }
