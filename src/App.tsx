@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  BulletList,
   Button,
   Checkbox,
   Collapse,
@@ -10,15 +11,20 @@ import {
   RangeSlider,
   Rating,
   TextField,
-  Typography
+  Typography,
 } from './ui-kit';
 
+const rules = [
+  { id: '1', rule: 'No pets allowed' },
+  { id: '2', rule: 'No smoking' },
+];
 export const App = () => {
   return (
     <>
+      <BulletList rules={rules} />
       <LikeButton />
       <div style={{ width: '266px' }}>
-        <Collapse label={'Collapse'}/>
+        <Collapse label={'Collapse'} />
       </div>
       <Rating />
       <RadioButton label={'radio'} />
