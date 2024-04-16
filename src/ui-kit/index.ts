@@ -10,3 +10,4 @@ export { Rating } from './Rating/Rating';
 export { Collapse } from './Collapse/Collapse';
 export { LikeButton } from './Button/LikeButton/LikeButton';
 export { BulletList } from './BulletList/BulletList';
+export { Pagination } from './Pagination/Pagination';

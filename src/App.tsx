@@ -6,6 +6,7 @@ import {
   Checkbox,
   Collapse,
   LikeButton,
+  Pagination,
   PickDate,
   RadioButton,
   RangeSlider,
@@ -21,6 +22,9 @@ const rules = [
 export const App = () => {
   return (
     <>
+      <div style={{ width: '266px' }}>
+        <Pagination />
+      </div>
       <BulletList rules={rules} />
       <LikeButton />
       <div style={{ width: '266px' }}>
