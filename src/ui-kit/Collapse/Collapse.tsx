@@ -16,11 +16,11 @@ export const Collapse = ({ label }: CollapseProps) => {
 
   return (
     <div className={styles.collapseContainer}>
-      <div className={styles.collapseHead}>
+      <div className={styles.collapseHead} onClick={toggleCollapse}>
         <Typography color={'dark100'} upperCase size={'xs'} weight={700}>
           {label}
         </Typography>
-        <button className={showCollapse ? styles.arrowExpanded : styles.arrow} onClick={toggleCollapse} />
+        <button className={showCollapse ? styles.arrowExpanded : styles.arrow}  />
       </div>
       {showCollapse && (
         <div>

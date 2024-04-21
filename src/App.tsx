@@ -16,8 +16,8 @@ import {
 } from './ui-kit';
 
 const rules = [
-  { id: '1', rule: 'No pets allowed' },
-  { id: '2', rule: 'No smoking' },
+  { id: '1', value: 'No pets allowed' },
+  { id: '2', value: 'No smoking' },
 ];
 export const App = () => {
   return (
@@ -25,7 +25,7 @@ export const App = () => {
       <div style={{ width: '266px' }}>
         <Pagination />
       </div>
-      <BulletList rules={rules} />
+      <BulletList items={rules} title={'Rules'}/>
       <LikeButton />
       <div style={{ width: '266px' }}>
         <Collapse label={'Collapse'} />

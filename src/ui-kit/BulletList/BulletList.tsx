@@ -2,26 +2,29 @@ import React from 'react';
 import styles from './BulletList.module.scss';
 import { Typography } from '../Typography/Typography';
 
-interface Rule {
+interface Item {
   id: string;
-  rule: string;
+  value: string;
 }
 
 interface BulletListProps {
-  rules: Rule[];
+  items: Item[];
+  title: string;
 }
 
-export const BulletList = ({ rules }: BulletListProps) => {
+export const BulletList = ({ items, title }: BulletListProps) => {
   return (
     <div className={styles.bulletListContainer}>
       <Typography size={'xs'} color={'dark100'} upperCase weight={700}>
-        Rules
+        {title}
       </Typography>
       <div className={styles.bulletListItems}>
-        {rules.map(({ id, rule }, i) => (
+        {items.map(({ id, value }, i) => (
           <div key={id} className={styles.itemContainer}>
             <div className={styles.bullet} />
-            <Typography color={'dark75'} size={'s'}>{rule}</Typography>
+            <Typography color={'dark75'} size={'s'}>
+              {value}
+            </Typography>
           </div>
         ))}
       </div>
