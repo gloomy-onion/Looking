@@ -18,7 +18,7 @@ export const LikeButton = () => {
   const getColor = () => (isClicked ? 'purple' : 'dark25');
 
   return (
-    <div className={cn(styles.likeButton, isClicked ? styles.clicked : '')} onClick={handleChange}>
+    <div className={cn(styles.likeButton, { [styles.clicked]: isClicked })} onClick={handleChange}>
       {isClicked ? <LikeFilled /> : <LikeEmpty />}
       <Typography size={'xs'} color={getColor()}>
         {likesCount}

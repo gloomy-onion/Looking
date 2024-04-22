@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .sliderHeader {
   display: flex;
   flex-direction: row;
@@ -20,7 +22,7 @@
   cursor: pointer;
   position: absolute;
   z-index: 100;
-  background: linear-gradient(180deg, rgba(11, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+  background: $greenGradient;
   border: white solid 2px;
   border-radius: 50%;
   display: block;
@@ -32,7 +34,7 @@
 }
 
 .exampleThumb.active {
-  background: linear-gradient(180deg, rgba(11, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+  background: $greenGradient;
 }
 
 .exampleTrack {
@@ -43,7 +45,7 @@
   border: rgba(31, 32, 65, 0.25) 1px solid;
 
   &[class*="-1"] {
-    background: linear-gradient(180deg, rgba(11, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+    background: $greenGradient;
     border: none;
   }
 }

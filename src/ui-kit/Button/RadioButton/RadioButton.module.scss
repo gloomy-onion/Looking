@@ -22,7 +22,7 @@
 .radio:checked {
   content: "";
   display: block;
-  background: linear-gradient(180deg, $purple 0%, $violet 100%) border-box;
+  background: $purpleGradient;
   border: 1px $purple solid;
   border-radius: 50%;
   width: 20px;
@@ -46,4 +46,8 @@
   border: 1px solid $dark25;
   border-radius: 50%;
   background-color: white;
+}
+
+.radioButtonGroup {
+
 }

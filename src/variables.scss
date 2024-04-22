@@ -6,3 +6,5 @@ $dark5: rgba(31, 32, 65, 0.05);
 $purple: rgba(188, 156, 255);
 $green: rgb(111, 207, 151);
 $violet: rgba(139, 164, 249);
+$purpleGradient: linear-gradient(180deg, $purple 0%, $violet 100%) border-box;
+$greenGradient: linear-gradient(180deg, rgba(111, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);

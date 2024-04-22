@@ -4,11 +4,11 @@ import {
   BulletList,
   Button,
   Checkbox,
-  Collapse,
+  CollapseExample,
   LikeButton,
   Pagination,
   PickDate,
-  RadioButton,
+  RadioButtonGroup,
   RangeSlider,
   Rating,
   TextField,
@@ -19,19 +19,25 @@ const rules = [
   { id: '1', value: 'No pets allowed' },
   { id: '2', value: 'No smoking' },
 ];
+
+const options = [
+  { value: 'option1', label: 'option 1' },
+  { value: 'option2', label: 'option 2' },
+  { value: 'option3', label: 'option 3' },
+];
 export const App = () => {
   return (
     <>
       <div style={{ width: '266px' }}>
         <Pagination />
       </div>
-      <BulletList items={rules} title={'Rules'}/>
+      <BulletList items={rules} title={'Rules'} />
       <LikeButton />
       <div style={{ width: '266px' }}>
-        <Collapse label={'Collapse'} />
+        <CollapseExample />
       </div>
       <Rating />
-      <RadioButton label={'radio'} />
+      <RadioButtonGroup options={options} name={'radio'} />
       <div style={{ width: '266px' }}>
         <RangeSlider label={'Slider'} description={'description'} range={'range'} />
       </div>

@@ -87,7 +87,7 @@
 
 .toggle:checked:after {
   transform: translateX(calc(100% + 3px));
-  background: linear-gradient(180deg, $purple 0%, $violet 100%) border-box;
+  background: $purpleGradient;
 }
 
 .toggle:checked {

@@ -25,7 +25,7 @@
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: linear-gradient(180deg, rgba(11, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+  background: $greenGradient;
   color: white;
   position: relative;
   cursor: pointer;
@@ -61,7 +61,7 @@
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: linear-gradient(180deg, rgba(11, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+  background: $greenGradient;
   color: white;
   position: relative;
   cursor: pointer;
@@ -96,7 +96,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background: linear-gradient(180deg, $purple 0%, $violet 100%) border-box;
+  background: $purpleGradient;
 }
 
 .disabled {

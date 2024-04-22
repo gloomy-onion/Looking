@@ -1,14 +1,15 @@
+import cn from 'classnames';
 import React, { useState } from 'react';
 
 import styles from './Collapse.module.scss';
-import { Checkbox } from '../Checkbox/Checkbox';
 import { Typography } from '../Typography/Typography';
 
 interface CollapseProps {
   label?: string;
+  children?: React.ReactNode;
 }
 
-export const Collapse = ({ label }: CollapseProps) => {
+export const Collapse = ({ label, children }: CollapseProps) => {
   const [showCollapse, setShowCollapse] = useState(false);
   const toggleCollapse = () => {
     setShowCollapse((prevState) => !prevState);
@@ -20,14 +21,9 @@ export const Collapse = ({ label }: CollapseProps) => {
         <Typography color={'dark100'} upperCase size={'xs'} weight={700}>
           {label}
         </Typography>
-        <button className={showCollapse ? styles.arrowExpanded : styles.arrow}  />
+        <button className={cn({ [styles.arrowExpanded]: showCollapse, [styles.arrow]: !showCollapse })} />
       </div>
-      {showCollapse && (
-        <div>
-          <Checkbox label={'checkbox-1'} />
-          <Checkbox label={'checkbox-2'} />
-        </div>
-      )}
+      {showCollapse && <div>{children}</div>}
     </div>
   );
 };
