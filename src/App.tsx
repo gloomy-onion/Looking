@@ -28,8 +28,8 @@ const options = [
 export const App = () => {
   return (
     <>
-      <div style={{ width: '266px' }}>
-        <Pagination />
+      <div style={{ width: '500px' }}>
+        <Pagination  />
       </div>
       <BulletList items={rules} title={'Rules'} />
       <LikeButton />
