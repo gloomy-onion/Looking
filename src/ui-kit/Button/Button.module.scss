@@ -24,14 +24,18 @@ button:active:not([disabled]) {
 }
 
 .outline {
+  justify-content: center;
+  width: 99px;
+  height: 44px;
+  align-items: center;
   background: linear-gradient(#fff, #fff) padding-box,
-  linear-gradient(180deg, $purple 0%, $violet 100%) border-box;
+  $purpleGradient;
   border: 2px solid transparent;
   border-radius: 30px;
 }
 
 .outline:hover:not([disabled]) {
-  box-shadow: 0 0 10px 0 rgba(188, 156, 255, 1) inset;
+  box-shadow: 0 0 10px 0 $purple inset;
   transform: scale(1.04)
 }
 
@@ -42,13 +46,13 @@ button:active:not([disabled]) {
 .filled {
   border-radius: 30px;
   border: none;
-  background: linear-gradient(180deg, $purple 0%, $violet 100%) border-box;
+  background: $purpleGradient;
   color: white;
 }
 
 
 .filled:hover:not([disabled]) {
-  box-shadow: 0 0 10px 0 rgba(188, 156, 255, 1);
+  box-shadow: 0 0 10px 0 $purple;
   transform: scale(1.04)
 }
 
@@ -65,9 +69,12 @@ button:active:not([disabled]) {
 }
 
 .withIcon {
+  justify-content: center;
+  width: 320px;
+  height: 44px;
   border-radius: 30px;
   border: none;
-  background: linear-gradient(180deg, $purple 0%, $violet 100%) border-box;
+  background: $purpleGradient;
   color: white;
   position: relative;
 }
@@ -79,7 +86,7 @@ button:active:not([disabled]) {
   height: 2px;
   background-color: white;
   position: absolute;
-  right: 13px;
+  right: 17px;
 }
 
 .withIcon:after {
@@ -91,10 +98,12 @@ button:active:not([disabled]) {
   border-right: 2px solid;
   transform: rotate(45deg);
   margin-left: 20px;
+  position: absolute;
+  right: 17px;
 }
 
 .withIcon:hover:not([disabled]) {
-  box-shadow: 0 0 10px 0 rgba(188, 156, 255, 1);
+  box-shadow: 0 0 10px 0 $purple;
   transform: scale(1.04)
 }
 

@@ -8,7 +8,7 @@ import styles from './DatePicker.module.scss';
 import './styles.css';
 import { PLACEHOLDER } from './constants';
 import { getDateTimestamp, getDateValue, getToday } from './helpers';
-import { DropdownContainer } from '..';
+import {DropdownContainer, TextField} from '..';
 
 interface DatePickerProps {
   selectsStart?: boolean;
@@ -18,6 +18,7 @@ interface DatePickerProps {
   startDate?: Date | null;
   endDate?: Date | null;
   onChange?: (date: Date | null) => void;
+  textField?: boolean;
 }
 
 registerLocale('ru', ru);

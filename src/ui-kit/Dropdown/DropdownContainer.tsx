@@ -28,7 +28,7 @@ export const DropdownContainer = ({ label = 'dropdown', children, value, placeho
     };
     const path = event.path || (e.composedPath && e.composedPath());
     if (path && !path.includes(dropdownRef.current as Node)) {
-      setShowDropDown(false); // Hide dropdown only if the click is outside
+      setShowDropDown(false);
     }
   };
 

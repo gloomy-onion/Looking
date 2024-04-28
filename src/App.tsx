@@ -1,13 +1,53 @@
 import React from 'react';
 
-import {Button, Checkbox, PickDate, TextField, Typography} from './ui-kit';
+import {
+  BulletList,
+  Button,
+  Checkbox,
+  CollapseExample,
+  LikeButton,
+  Pagination,
+  PickDate,
+  RadioButtonGroup,
+  RangeSlider,
+  Rating,
+  TextField,
+  Typography,
+} from './ui-kit';
+import {Registration} from './widgets';
 
+const rules = [
+  { id: '1', value: 'No pets allowed' },
+  { id: '2', value: 'No smoking' },
+];
+
+const options = [
+  { value: 'option1', label: 'option 1' },
+  { value: 'option2', label: 'option 2' },
+  { value: 'option3', label: 'option 3' },
+];
 export const App = () => {
   return (
     <>
-      <Checkbox checkboxType={'toggle'} label={'toggle'}/>
-      <Checkbox checkboxType={'checkbox'}/>
-     <div style={{width: '322px'}}> <PickDate /></div>
+      <Registration/>
+      <div style={{ width: '500px' }}>
+        <Pagination  />
+      </div>
+      <BulletList items={rules} title={'Rules'} />
+      <LikeButton />
+      <div style={{ width: '266px' }}>
+        <CollapseExample />
+      </div>
+      <Rating />
+      <RadioButtonGroup options={options} name={'radio'} />
+      <div style={{ width: '266px' }}>
+        <RangeSlider label={'Slider'} description={'description'} range={'range'} />
+      </div>
+      <Checkbox checkboxType={'toggle'} label={'toggle'} />
+      <Checkbox checkboxType={'checkbox'} title={'Checkbox title'} label={'checkbox'} />
+      <div style={{ width: '322px' }}>
+        <PickDate />
+      </div>
       <TextField />
       <TextField label={'masked text field'} textFieldType={'date'} />
       <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} hasButton />
