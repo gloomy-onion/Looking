@@ -6,18 +6,19 @@ import { Typography } from '../../Typography/Typography';
 interface RadioButtonProps {
   label?: string;
   selected?: boolean;
-  value: string | number;
+  value: string;
   name: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const RadioButton = ({ label, selected, value, name, onChange }: RadioButtonProps) => {
   return (
-    <div className={styles.radioContainer}>
-      <input type={'radio'} checked={selected} name={name} value={value} onChange={onChange} className={styles.radio} />
+    // я не понимаю какой htmlFor сюда прилепить
+    <label className={styles.radioContainer}>
+      <input type={'radio'} onChange={onChange} checked={selected} name={name} value={value} className={styles.radio} />
       <Typography size={'s'} color={'dark75'}>
         {label}
       </Typography>
-    </div>
+    </label>
   );
 };

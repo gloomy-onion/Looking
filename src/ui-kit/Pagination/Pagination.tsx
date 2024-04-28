@@ -28,7 +28,7 @@ const generatePageNumbers = () => {
     const pages = [];
     const middlePages = Math.floor(totalPages / 2);
 
-    if (totalPages < 5) {
+    if (totalPages <= 5) {
       for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
       }

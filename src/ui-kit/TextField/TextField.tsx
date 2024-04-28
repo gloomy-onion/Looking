@@ -13,8 +13,8 @@ interface TextFieldProps {
 export const TextField = ({
   hasButton = false,
   placeholder = 'type sth',
-  label = 'text field',
   textFieldType = 'text',
+  label,
 }: TextFieldProps) => {
   const [inputValue, setInputValue] = useState('');
   const clickClear = () => {

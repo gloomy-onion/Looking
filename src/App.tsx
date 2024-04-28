@@ -14,6 +14,7 @@ import {
   TextField,
   Typography,
 } from './ui-kit';
+import {Registration} from './widgets';
 
 const rules = [
   { id: '1', value: 'No pets allowed' },
@@ -28,6 +29,7 @@ const options = [
 export const App = () => {
   return (
     <>
+      <Registration/>
       <div style={{ width: '500px' }}>
         <Pagination  />
       </div>
