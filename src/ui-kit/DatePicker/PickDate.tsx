@@ -18,8 +18,6 @@ interface DatePickerProps {
   startDate?: Date | null;
   endDate?: Date | null;
   onChange?: (date: Date | null) => void;
-  textField?: boolean;
-  datePickerType?: 'textField' | 'dropdown';
 }
 
 registerLocale('ru', ru);
