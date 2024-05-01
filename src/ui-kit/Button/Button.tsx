@@ -7,13 +7,22 @@ import { Typography } from '../Typography/Typography';
 
 interface ButtonProps {
   disabled?: boolean;
-  buttonType?: 'filled' | 'outline' | 'clear' | 'withIcon';
-  label: string;
+  buttonType?: 'filled' | 'outline' | 'clear' | 'withIcon' | 'previous' | 'next';
+  label?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export const Button = ({ buttonType = 'filled', disabled = false, label = '' }: PropsWithChildren<ButtonProps>) => {
+export const Button = ({
+  buttonType = 'filled',
+  disabled = false,
+  label = '',
+  onClick,
+}: PropsWithChildren<ButtonProps>) => {
   return (
-    <button disabled={disabled} className={cn(styles.button, styles[buttonType])}>
+    <button
+      disabled={disabled}
+      className={cn(styles.button, styles[buttonType])}
+      onClick={(event) => onClick && onClick(event)}    >
       <Typography size={'xs'} weight={700} upperCase color={getLabelColor(buttonType)}>
         {label}
       </Typography>

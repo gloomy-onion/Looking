@@ -5,7 +5,7 @@ import { Typography } from '../Typography/Typography';
 
 interface TextFieldProps {
   placeholder?: string;
-  textFieldType?: 'text' | 'date' | 'password' | 'email';
+  textFieldType?: 'text' | 'password' | 'email';
   label?: string;
   hasButton?: boolean;
 }
@@ -31,8 +31,6 @@ export const TextField = ({
       <div className={styles.textFieldInputCover}>
         <input
           type={textFieldType}
-          max={'2050-12-31'}
-          min={'2000-01-01'}
           placeholder={placeholder}
           className={styles.textFieldInput}
           value={inputValue}

@@ -49,7 +49,6 @@ export const App = () => {
         <PickDate />
       </div>
       <TextField />
-      <TextField label={'masked text field'} textFieldType={'date'} />
       <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} hasButton />
       <Typography as={'h1'} color={'dark100'} upperCase>
         hello h1

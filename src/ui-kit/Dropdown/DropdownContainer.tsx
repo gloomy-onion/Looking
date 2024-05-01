@@ -14,7 +14,7 @@ interface DropdownProps {
 
 type ComposedPath = () => Node[];
 
-export const DropdownContainer = ({ label = 'dropdown', children, value, placeholder }: DropdownProps) => {
+export const DropdownContainer = ({ label, children, value, placeholder }: DropdownProps) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const toggleDropDown = () => {

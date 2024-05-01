@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import styles from './DatePicker.module.scss';
+import styles from './PickDate.module.scss';
 import './styles.css';
 import { PLACEHOLDER } from './constants';
 import { getDateTimestamp, getDateValue, getToday } from './helpers';
-import {DropdownContainer, TextField} from '..';
+import { DropdownContainer } from '..';
 
 interface DatePickerProps {
   selectsStart?: boolean;
@@ -19,6 +19,7 @@ interface DatePickerProps {
   endDate?: Date | null;
   onChange?: (date: Date | null) => void;
   textField?: boolean;
+  datePickerType?: 'textField' | 'dropdown';
 }
 
 registerLocale('ru', ru);
@@ -35,24 +36,26 @@ export const PickDate: React.FC<DatePickerProps> = () => {
   };
 
   return (
-    <DropdownContainer value={getDateValue(rangeStart, rangeEnd)} placeholder={PLACEHOLDER}>
-      <DatePicker
-        locale="ru"
-        inline
-        selectsRange
-        selected={rangeStart}
-        minDate={today}
-        startDate={rangeStart}
-        endDate={rangeEnd}
-        onChange={onChange}
-        className={styles.calendar}
-        dayClassName={(date) =>
-          cn({
-            [styles.disabled]: getDateTimestamp(date) < midnightToday,
-            [styles.currentDay]: getDateTimestamp(date) === midnightToday,
-          })
-        }
-      />
-    </DropdownContainer>
+    <>
+      <DropdownContainer value={getDateValue(rangeStart, rangeEnd)} placeholder={PLACEHOLDER}>
+        <DatePicker
+          locale="ru"
+          inline
+          selectsRange
+          selected={rangeStart}
+          minDate={today}
+          startDate={rangeStart}
+          endDate={rangeEnd}
+          onChange={onChange}
+          className={styles.calendar}
+          dayClassName={(date) =>
+            cn({
+              [styles.disabled]: getDateTimestamp(date) < midnightToday,
+              [styles.currentDay]: getDateTimestamp(date) === midnightToday,
+            })
+          }
+        />
+      </DropdownContainer>
+    </>
   );
 };

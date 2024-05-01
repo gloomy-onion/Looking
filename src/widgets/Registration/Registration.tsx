@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './Registration.module.scss';
-import { Button, Checkbox, RadioButtonGroup, TextField, Typography } from '../../ui-kit';
+import { Button, Checkbox, DatePickerBirthDay, RadioButtonGroup, TextField, Typography } from '../../ui-kit';
 
 const gender = [
   { value: 'male', label: 'Мужской' },
@@ -20,7 +20,7 @@ export const Registration = () => {
       <Typography weight={700} size={'xs'} color={'dark100'} upperCase>
         {'дата рождения'}
       </Typography>
-      <TextField textFieldType={'date'} placeholder={'ДД.ММ.ГГГГ'} />
+      <DatePickerBirthDay />
       <Typography weight={700} size={'xs'} color={'dark100'} upperCase>
         {'Данные для входа в сервис'}
       </Typography>
