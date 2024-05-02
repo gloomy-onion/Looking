@@ -18,11 +18,12 @@ interface DatePickerProps {
   startDate?: Date | null;
   endDate?: Date | null;
   onChange?: (date: Date | null) => void;
+  type?: 'single' | 'double';
 }
 
 registerLocale('ru', ru);
 
-export const PickDate: React.FC<DatePickerProps> = () => {
+export const PickDate: React.FC<DatePickerProps> = ({ type,...otherProps}) => {
   const [rangeStart, setRangeStart] = useState<Date | null>(new Date());
   const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
   const { today, midnightToday } = getToday();
@@ -35,8 +36,15 @@ export const PickDate: React.FC<DatePickerProps> = () => {
 
   return (
     <>
-      <DropdownContainer value={getDateValue(rangeStart, rangeEnd)} placeholder={PLACEHOLDER}>
+      <DropdownContainer
+        value={getDateValue(rangeStart, rangeEnd)}
+        startValue={getDateValue(rangeStart)}
+        endValue={getDateValue(rangeEnd)}
+        placeholder={PLACEHOLDER}
+        type={type}
+      >
         <DatePicker
+          {...otherProps}
           locale="ru"
           inline
           selectsRange
