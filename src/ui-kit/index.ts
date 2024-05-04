@@ -14,3 +14,4 @@ export { LikeButton } from './Button/LikeButton/LikeButton';
 export { BulletList } from './BulletList/BulletList';
 export { Pagination } from './Pagination/Pagination';
 export { RadioButtonGroup } from './Button/RadioButton/RadioButtonGroup';
+export { GuestsDropdown } from './GuestsDropdown/GuestsDropdown';

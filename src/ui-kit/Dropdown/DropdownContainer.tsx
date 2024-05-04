@@ -1,8 +1,9 @@
 import cn from 'classnames';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import styles from './Dropdown.module.scss';
-import { Typography } from '../Typography/Typography';
+import {Button} from '../Button/Button';
+import {Typography} from '../Typography/Typography';
 
 interface DropdownProps {
   label?: string;
@@ -16,7 +17,15 @@ interface DropdownProps {
 
 type ComposedPath = () => Node[];
 
-export const DropdownContainer = ({ label, children, value, placeholder, type, startValue, endValue }: DropdownProps) => {
+export const DropdownContainer = ({
+                                    label,
+                                    children,
+                                    value,
+                                    placeholder,
+                                    type,
+                                    startValue,
+                                    endValue,
+                                  }: DropdownProps) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -62,7 +71,7 @@ export const DropdownContainer = ({ label, children, value, placeholder, type, s
             <Typography color={'dark75'} size={'s'}>
               {value || placeholder}
             </Typography>
-            <button className={showDropDown ? styles.arrowExpanded : styles.arrow} />
+            <button className={showDropDown ? styles.arrowExpanded : styles.arrow}/>
           </div>
         )}
         {type === 'double' && (
@@ -80,7 +89,7 @@ export const DropdownContainer = ({ label, children, value, placeholder, type, s
               <Typography color={'dark75'} size={'s'}>
                 {startValue}
               </Typography>
-              <button className={showDropDown ? styles.arrowExpanded : styles.arrow} />
+              <button className={showDropDown ? styles.arrowExpanded : styles.arrow}/>
             </div>
             <div
               className={cn(styles.dropdown, {
@@ -95,12 +104,22 @@ export const DropdownContainer = ({ label, children, value, placeholder, type, s
               <Typography color={'dark75'} size={'s'}>
                 {endValue}
               </Typography>
-              <button className={showDropDown ? styles.arrowExpanded : styles.arrow} />
+              <button className={showDropDown ? styles.arrowExpanded : styles.arrow}/>
             </div>
           </>
         )}
+        {showDropDown && <div ref={dropdownRef} className={styles.dropdownExpanded}>{children}
+          <div className={styles.dropdownButtons}>
+            <Button label={'очистить'} buttonType={'clear'}/>
+            <Button label={'применить'} buttonType={'clear'}/>
+          </div>
+        </div>}
       </div>
-      {showDropDown && <div className={styles.dropdownContent}>{children}</div>}
     </div>
   );
 };
+
+// возникла мысль следующего характера:
+// нельзя ли здесь для отображения одного или двух дропдаунов помапиться по массиву
+// у которого будет условно [{value: startValue, label: label1}, {value: endValue, label: label2}]
+// а то как будто получается трижды дублирование одного и того же кода

@@ -14,7 +14,7 @@ import {
   TextField,
   Typography,
 } from './ui-kit';
-import {Registration} from './widgets';
+import { LandingSearch, Registration } from './widgets';
 
 const rules = [
   { id: '1', value: 'No pets allowed' },
@@ -29,9 +29,10 @@ const options = [
 export const App = () => {
   return (
     <>
-      <Registration/>
+      <LandingSearch />
+      <Registration />
       <div style={{ width: '500px' }}>
-        <Pagination  />
+        <Pagination />
       </div>
       <BulletList items={rules} title={'Rules'} />
       <LikeButton />
@@ -46,7 +47,7 @@ export const App = () => {
       <Checkbox checkboxType={'toggle'} label={'toggle'} />
       <Checkbox checkboxType={'checkbox'} title={'Checkbox title'} label={'checkbox'} />
       <div style={{ width: '322px' }}>
-        <PickDate type={'double'}/>
+        <PickDate type={'double'} />
       </div>
       <TextField />
       <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} hasButton />

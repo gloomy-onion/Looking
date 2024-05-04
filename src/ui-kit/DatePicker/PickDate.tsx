@@ -19,11 +19,12 @@ interface DatePickerProps {
   endDate?: Date | null;
   onChange?: (date: Date | null) => void;
   type?: 'single' | 'double';
+  label?: string;
 }
 
 registerLocale('ru', ru);
 
-export const PickDate: React.FC<DatePickerProps> = ({ type,...otherProps}) => {
+export const PickDate: React.FC<DatePickerProps> = ({ type,label,...otherProps}) => {
   const [rangeStart, setRangeStart] = useState<Date | null>(new Date());
   const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
   const { today, midnightToday } = getToday();
@@ -42,6 +43,7 @@ export const PickDate: React.FC<DatePickerProps> = ({ type,...otherProps}) => {
         endValue={getDateValue(rangeEnd)}
         placeholder={PLACEHOLDER}
         type={type}
+        label={label}
       >
         <DatePicker
           {...otherProps}
