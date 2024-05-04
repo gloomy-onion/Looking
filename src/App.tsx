@@ -14,7 +14,7 @@ import {
   TextField,
   Typography,
 } from './ui-kit';
-import { LandingSearch, Registration } from './widgets';
+import { LandingSearch, LoginForm, Registration } from './widgets';
 
 const rules = [
   { id: '1', value: 'No pets allowed' },
@@ -29,6 +29,7 @@ const options = [
 export const App = () => {
   return (
     <>
+      <LoginForm />
       <LandingSearch />
       <Registration />
       <div style={{ width: '500px' }}>
