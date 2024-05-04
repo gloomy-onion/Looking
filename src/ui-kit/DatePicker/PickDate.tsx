@@ -24,7 +24,7 @@ interface DatePickerProps {
 
 registerLocale('ru', ru);
 
-export const PickDate: React.FC<DatePickerProps> = ({ type,label,...otherProps}) => {
+export const PickDate: React.FC<DatePickerProps> = ({ type, label, ...otherProps }) => {
   const [rangeStart, setRangeStart] = useState<Date | null>(new Date());
   const [rangeEnd, setRangeEnd] = useState<Date | null>(null);
   const { today, midnightToday } = getToday();

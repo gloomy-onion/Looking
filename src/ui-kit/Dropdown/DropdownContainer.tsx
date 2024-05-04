@@ -118,8 +118,52 @@ export const DropdownContainer = ({
     </div>
   );
 };
-
 // возникла мысль следующего характера:
 // нельзя ли здесь для отображения одного или двух дропдаунов помапиться по массиву
 // у которого будет условно [{value: startValue, label: label1}, {value: endValue, label: label2}]
 // а то как будто получается трижды дублирование одного и того же кода
+
+//  const dropdownItems = [
+//     {value: startValue, label: 'Приезд'},
+//     {value: endValue, label: 'Выезд'},
+//   ];
+// return (
+//   <div className={styles.dropdownWrapper}>
+//     {dropdownItems.map((item) => (
+//       <>
+//         {item.label && (
+//           <Typography color={'dark100'} size={'xs'} weight={700} upperCase>
+//             {item.label}
+//           </Typography>
+//         )}
+//         <div className={styles.dropdownBox}>
+//           <div
+//             key={item.value}
+//             className={cn(styles.dropdown, {
+//               [styles.dropdownTopExpanded]: showDropDown,
+//               [styles.dropdownDefault]: !showDropDown,
+//             })}
+//             onClick={(e) => {
+//               e.stopPropagation();
+//               toggleDropDown();
+//             }}
+//           >
+//             <Typography color={'dark75'} size={'s'}>
+//               {item.value || placeholder}
+//             </Typography>
+//             <button className={showDropDown ? styles.arrowExpanded : styles.arrow}/>
+//           </div>
+//         </div>
+//       </>
+//     ))}
+//     {showDropDown && (
+//       <div ref={dropdownRef} className={styles.dropdownExpanded}>
+//         {children}
+//         <div className={styles.dropdownButtons}>
+//           <Button label={'очистить'} buttonType={'clear'}/>
+//           <Button label={'применить'} buttonType={'clear'}/>
+//         </div>
+//       </div>
+//     )}
+//   </div>
+// );
