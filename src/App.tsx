@@ -14,7 +14,7 @@ import {
   TextField,
   Typography,
 } from './ui-kit';
-import { LandingSearch, LoginForm, Registration } from './widgets';
+import { LandingSearch, LoginForm, Registration, RoomCard } from './widgets';
 
 const rules = [
   { id: '1', value: 'No pets allowed' },
@@ -29,6 +29,7 @@ const options = [
 export const App = () => {
   return (
     <>
+      <RoomCard rating={3} price={7000} roomNum={363} reviews={12} lux />
       <LoginForm />
       <LandingSearch />
       <Registration />
