@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './RoomCard.module.scss';
 import { ImageCarousel, Rating, Typography } from '../../ui-kit';
 import { roomImg } from '../../assets/img/roomImg';
+import {RoomNumPrice} from './RoomNumPrice';
 
 interface RoomCardProps {
   price: number;
@@ -20,25 +21,7 @@ export const RoomCard = ({ price, reviews, rating, roomNum, lux }: RoomCardProps
       </div>
       <div className={styles.roomInfo}>
         <div className={styles.roomCardUpper}>
-          <div className={styles.roomNum}>
-            <Typography size={'s'} color={'dark100'} weight={700}>
-              {'№'}
-            </Typography>
-            <Typography size={'m'} color={'dark100'} weight={700}>
-              {roomNum}
-            </Typography>
-            {lux && (
-              <Typography color={'purple'} upperCase size={'xs'} weight={700}>
-                {'Люкс'}
-              </Typography>
-            )}
-          </div>
-          <div className={styles.roomPrice}>
-            <Typography size={'xs'} color={'dark50'} weight={700}>{`${price}₽`}</Typography>
-            <Typography size={'xs'} color={'dark50'}>
-              {'в сутки'}
-            </Typography>
-          </div>
+          <RoomNumPrice price={price} roomNum={roomNum} lux/>
         </div>
         <div className={styles.roomCardBottom}>
           <div>

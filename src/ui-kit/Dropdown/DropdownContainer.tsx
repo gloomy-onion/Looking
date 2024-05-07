@@ -111,7 +111,7 @@ export const DropdownContainer = ({
         {showDropDown && <div ref={dropdownRef} className={styles.dropdownExpanded}>{children}
           <div className={styles.dropdownButtons}>
             <Button label={'очистить'} buttonType={'clear'}/>
-            <Button label={'применить'} buttonType={'clear'}/>
+            <Button label={'применить'} buttonType={'clear'} onClick={() => setShowDropDown(false)}/>
           </div>
         </div>}
       </div>

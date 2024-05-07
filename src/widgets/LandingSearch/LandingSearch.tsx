@@ -2,12 +2,7 @@ import React from 'react';
 
 import styles from './LandingSearch.module.scss';
 import {Button, GuestsDropdown, PickDate, Typography} from '../../ui-kit';
-
-const guests = [
-  {value: 'adults', label: 'Взрослые'},
-  {value: 'children', label: 'Дети'},
-  {value: 'newborn', label: 'Младенцы'}
-];
+import {guests} from '../constants';
 
 export const LandingSearch = () => {
   return (
@@ -17,7 +12,7 @@ export const LandingSearch = () => {
       </Typography>
       <PickDate type={'double'} label={'прибытие'}/>
       <GuestsDropdown items={guests} label={'Гости'}/>
-      <Button label={'Подобрать номер'} buttonType={'withIcon'}/>
+      <Button label={'Забронировать'} buttonType={'withIcon'}/>
     </div>
   );
 };
