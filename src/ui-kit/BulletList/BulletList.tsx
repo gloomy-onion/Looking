@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './BulletList.module.scss';
 import { Typography } from '../Typography/Typography';
 

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Header, Footer } from './components';
 import {
   BulletList,
   Button,
@@ -14,8 +15,7 @@ import {
   TextField,
   Typography,
 } from './ui-kit';
-import { LandingSearch, LoginForm, Registration, RoomCard } from './widgets';
-import {Booking} from './widgets/Booking/Booking';
+import { Booking, LandingSearch, LoginForm, Registration, RoomCard } from './widgets';
 
 const rules = [
   { id: '1', value: 'No pets allowed' },
@@ -30,7 +30,9 @@ const options = [
 export const App = () => {
   return (
     <>
-      <Booking price={200} roomNum={233} duration={4}/>
+      <Footer/>
+      <Header isAuth={false}/>
+      <Booking price={200} roomNum={233} duration={4} />
       <RoomCard rating={3} price={7000} roomNum={363} reviews={12} lux />
       <LoginForm />
       <LandingSearch />
