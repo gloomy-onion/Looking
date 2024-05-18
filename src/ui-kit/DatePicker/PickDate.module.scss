@@ -43,3 +43,9 @@
   font-family: Montserrat sans-serif $dark50;
   text-transform: capitalize;
 }
+
+.datepickerButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

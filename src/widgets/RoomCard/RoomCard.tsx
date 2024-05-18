@@ -1,9 +1,9 @@
 import React from 'react';
 
 import styles from './RoomCard.module.scss';
-import { ImageCarousel, Rating, Typography } from '../../ui-kit';
+import { RoomNumPrice } from './RoomNumPrice';
 import { roomImg } from '../../assets/img/roomImg';
-import {RoomNumPrice} from './RoomNumPrice';
+import { ImageCarousel, Rating, Typography } from '../../ui-kit';
 
 interface RoomCardProps {
   price: number;
@@ -21,7 +21,7 @@ export const RoomCard = ({ price, reviews, rating, roomNum, lux }: RoomCardProps
       </div>
       <div className={styles.roomInfo}>
         <div className={styles.roomCardUpper}>
-          <RoomNumPrice price={price} roomNum={roomNum} lux/>
+          <RoomNumPrice price={price} roomNum={roomNum} lux />
         </div>
         <div className={styles.roomCardBottom}>
           <div>
@@ -32,7 +32,7 @@ export const RoomCard = ({ price, reviews, rating, roomNum, lux }: RoomCardProps
               {reviews}
             </Typography>
             <Typography size={'xs'} color={'dark50'}>
-              {'Отзывов'}
+              &nbsp;Отзывов
             </Typography>
           </div>
         </div>

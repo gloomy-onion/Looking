@@ -1,6 +1,6 @@
-@import '../../../variables';
+@import '../../variables';
 
-.dropdownItem {
+.quantityItem {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,18 +9,11 @@
   height: 40px;
 }
 
-.dropdownItemButtons {
+.quantityItemButtons {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-}
-
-.dropdownButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
 }
 
 .plusBtn {

@@ -14,21 +14,21 @@ export const RoomNumPrice = ({ price, roomNum, lux }: RoomNumPriceProps) => {
     <>
       <div className={styles.roomNum}>
         <Typography size={'s'} color={'dark100'} weight={700}>
-          {'№'}
+          №
         </Typography>
         <Typography size={'m'} color={'dark100'} weight={700}>
-          {roomNum}
+          {roomNum}&nbsp;
         </Typography>
         {lux && (
           <Typography color={'purple'} upperCase size={'xs'} weight={700}>
-            {'Люкс'}
+            Люкс
           </Typography>
         )}
       </div>
       <div className={styles.roomPrice}>
         <Typography size={'s'} color={'dark50'} weight={700}>{`${price}₽`}</Typography>
         <Typography size={'s'} color={'dark50'}>
-          {'в сутки'}
+          &nbsp;в сутки
         </Typography>
       </div>
     </>

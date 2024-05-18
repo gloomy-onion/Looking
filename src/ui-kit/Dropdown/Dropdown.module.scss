@@ -45,16 +45,9 @@
   position: absolute;
   z-index: 999;
   background-color: white;
-  /* Задание родительского элемента для .dropdownExpanded */
   top: calc(100%);
   left: 0;
   width: 100%;
-}
-
-.dropdownButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .arrow {

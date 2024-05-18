@@ -21,6 +21,7 @@ export const RadioButtonGroup = ({ options, label, name }: RadioButtonGroupProps
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
   };
+
   return (
     <div className={styles.radioButtonGroup}>
       <Typography size={'m'} color={'dark75'}>

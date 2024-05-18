@@ -22,7 +22,8 @@ export const Button = ({
     <button
       disabled={disabled}
       className={cn(styles.button, styles[buttonType])}
-      onClick={(event) => onClick && onClick(event)}    >
+      onClick={(event) => onClick && onClick(event)}
+    >
       <Typography size={'xs'} weight={700} upperCase color={getLabelColor(buttonType)}>
         {label}
       </Typography>

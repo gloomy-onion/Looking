@@ -3,17 +3,14 @@ import React, { useState } from 'react';
 
 import styles from './Collapse.module.scss';
 import { Typography } from '../Typography/Typography';
+import { TypographyProps } from '../Typography/types';
 
-interface CollapseProps {
+type CollapseProps = {
   label?: string;
   children?: React.ReactNode;
-  color?: 'dark100' | 'dark50';
-  upperCase?: boolean;
-  size?: 'xs' | 's';
-  weight?: 700 | 400;
-}
+} & TypographyProps;
 
-export const Collapse = ({ label, children, color, upperCase, size, weight }: CollapseProps) => {
+export const Collapse = ({ label, children, ...TypographyProps}: CollapseProps) => {
   const [showCollapse, setShowCollapse] = useState(false);
   const toggleCollapse = () => {
     setShowCollapse((prevState) => !prevState);
@@ -22,7 +19,7 @@ export const Collapse = ({ label, children, color, upperCase, size, weight }: Co
   return (
     <div className={styles.collapseContainer}>
       <div className={styles.collapseHead} onClick={toggleCollapse}>
-        <Typography color={color} upperCase={upperCase} size={size} weight={weight}>
+        <Typography {...TypographyProps}>
           {label}
         </Typography>
         <button className={cn({ [styles.arrowExpanded]: showCollapse, [styles.arrow]: !showCollapse })} />
