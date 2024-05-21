@@ -9,7 +9,7 @@
 
 .dropdown {
   align-items: center;
-  padding: 14px;
+  padding-left: 14px;
   border: 1px solid $dark25;
   border-radius: 4px;
   width: 100%;
@@ -47,13 +47,12 @@
   background-color: white;
   top: calc(100%);
   left: 0;
-  width: 100%;
+  width: 318px;
 }
 
 .arrow {
-  position: absolute;
+  position: relative;
   right: 0;
-  width: 44px;
   height: 44px;
   border: none;
   background: none;
@@ -73,9 +72,8 @@
 }
 
 .arrowExpanded {
-  position: absolute;
+  position: relative;
   right: 0;
-  width: 44px;
   height: 44px;
   border: none;
   background: none;

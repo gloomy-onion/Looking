@@ -28,7 +28,8 @@ const options = [
 export const App = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [likesCount, setLikesCount] = useState(1);
-
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
 
   const handleLikeChange = () => {
     setIsClicked((prevState) => !prevState);
@@ -37,12 +38,19 @@ export const App = () => {
 
   const handleCheckboxChange = () => setIsClicked((prev) => !prev);
 
+  const onDateChange = (dates: [Date | null, Date | null]) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
+
   return (
     <>
-      <div style={{ width: '322px' }}>
-        <PickDate />
+      <div style={{ width: '318px' , display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+        <PickDate startDate={startDate} onChange={onDateChange}/>
+        <PickDate endDate={endDate} onChange={onDateChange}/>
       </div>
-      {/* <Footer /> */}
+       <Footer />
       <Header isAuth={false} />
       <Booking price={200} roomNum={233} duration={4} />
       <RoomCard rating={3} price={7000} roomNum={363} reviews={12} lux />
