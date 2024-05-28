@@ -10,7 +10,7 @@ type CollapseProps = {
   children?: React.ReactNode;
 } & TypographyProps;
 
-export const Collapse = ({ label, children, ...TypographyProps}: CollapseProps) => {
+export const Collapse = ({ label, children, ...typographyProps}: CollapseProps) => {
   const [showCollapse, setShowCollapse] = useState(false);
   const toggleCollapse = () => {
     setShowCollapse((prevState) => !prevState);
@@ -19,7 +19,7 @@ export const Collapse = ({ label, children, ...TypographyProps}: CollapseProps) 
   return (
     <div className={styles.collapseContainer}>
       <div className={styles.collapseHead} onClick={toggleCollapse}>
-        <Typography {...TypographyProps}>
+        <Typography {...typographyProps}>
           {label}
         </Typography>
         <button className={cn({ [styles.arrowExpanded]: showCollapse, [styles.arrow]: !showCollapse })} />

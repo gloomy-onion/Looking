@@ -9,8 +9,8 @@ const gender = [
 ];
 
 export const Registration = () => {
-  const [isClicked, setIsClicked] = useState(false);
-  const handleCheckboxChange = () => setIsClicked((prev) => !prev);
+  const [checked, setIsChecked] = useState(false);
+  const handleCheckboxChange = () => setIsChecked((prev) => !prev);
 
   return (
     <div className={styles.regContainer}>
@@ -29,8 +29,8 @@ export const Registration = () => {
         <Checkbox
           checkboxType={'toggle'}
           label={'Получать спецпредложения'}
-          isClicked={isClicked}
-          onClick={handleCheckboxChange}
+          checked={checked}
+          onChange={handleCheckboxChange}
         />
       </div>
       <Button label={'Перейти к оплате'} buttonType={'withIcon'} />

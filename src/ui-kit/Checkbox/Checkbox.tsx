@@ -7,14 +7,14 @@ interface CheckboxProps {
   checkboxType?: 'checkbox' | 'toggle';
   label?: string;
   title?: string;
-  isClicked: boolean;
-  onClick: () => void;
+  checked: boolean;
+  onChange: () => void;
 }
 
-export const Checkbox = ({ checkboxType = 'checkbox', label, title, onClick, isClicked }: CheckboxProps) => {
+export const Checkbox = ({ checkboxType = 'checkbox', label, title, onChange, checked }: CheckboxProps) => {
   return (
     <div className={styles.checkboxWrapper}>
-      <input className={styles[checkboxType]} type={'checkbox'} checked={isClicked} onChange={onClick} />
+      <input className={styles[checkboxType]} type={'checkbox'} checked={checked} onChange={onChange} />
       <div className={styles.checkboxLabel}>
         {title && (
           <Typography size={'s'} color={'dark75'} weight={700}>

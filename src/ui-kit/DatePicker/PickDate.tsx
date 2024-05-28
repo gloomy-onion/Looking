@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { ru } from 'date-fns/locale/ru';
-import React, {useState} from 'react';
+import React from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -15,7 +15,7 @@ interface DatePickerProps {
   minDate?: Date;
   startDate?: Date | null;
   endDate?: Date | null;
-  onChange?: (date: [Date | null, Date | null], event: React.SyntheticEvent<never, Event> | undefined) => void;
+  onChange?: (date: [Date | null, Date | null]) => void;
   label?: string;
   value?: string;
 }
@@ -23,17 +23,7 @@ interface DatePickerProps {
 registerLocale('ru', ru);
 
 export const PickDate: React.FC<DatePickerProps> = ({ label, value, onChange, startDate, endDate, ...otherProps }) => {
-  // const [startDate, setStartDate] = useState<Date | null>(null);
-  // const [endDate, setEndDate] = useState<Date | null>(null);
-
   const { today, midnightToday } = getToday();
-
-  // const onDateChange = (dates: [Date | null, Date | null]) => {
-  //   const [start, end] = dates;
-  //   setStartDate(start);
-  //   setEndDate(end);
-  // };
-  // здесь почему-то ругается тайпскрипт на onChange, если я ее выношу в апп
 
   return (
     <>
@@ -47,8 +37,7 @@ export const PickDate: React.FC<DatePickerProps> = ({ label, value, onChange, st
           minDate={today}
           startDate={startDate}
           endDate={endDate}
-          // @ts-ignore
-          onChange={onChange}
+          onChange={(dates) => onChange && onChange(dates)}
           className={styles.calendar}
           dayClassName={(date) =>
             cn({

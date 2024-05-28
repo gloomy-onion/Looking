@@ -31,9 +31,11 @@ export const RoomCard = ({ price, reviews, rating, roomNum, lux }: RoomCardProps
             <Typography size={'xs'} color={'dark50'} weight={700}>
               {reviews}
             </Typography>
-            <Typography size={'xs'} color={'dark50'}>
-              &nbsp;Отзывов
-            </Typography>
+            <div>
+              <Typography size={'xs'} color={'dark50'}>
+                Отзывов
+              </Typography>
+            </div>
           </div>
         </div>
       </div>

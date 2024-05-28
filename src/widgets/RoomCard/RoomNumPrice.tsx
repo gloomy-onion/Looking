@@ -17,7 +17,7 @@ export const RoomNumPrice = ({ price, roomNum, lux }: RoomNumPriceProps) => {
           №
         </Typography>
         <Typography size={'m'} color={'dark100'} weight={700}>
-          {roomNum}&nbsp;
+          {roomNum}
         </Typography>
         {lux && (
           <Typography color={'purple'} upperCase size={'xs'} weight={700}>
@@ -28,7 +28,7 @@ export const RoomNumPrice = ({ price, roomNum, lux }: RoomNumPriceProps) => {
       <div className={styles.roomPrice}>
         <Typography size={'s'} color={'dark50'} weight={700}>{`${price}₽`}</Typography>
         <Typography size={'s'} color={'dark50'}>
-          &nbsp;в сутки
+          в сутки
         </Typography>
       </div>
     </>

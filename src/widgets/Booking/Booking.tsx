@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './Booking.module.scss';
 import { Button, PickDate, Typography } from '../../ui-kit';
 import { RoomNumPrice } from '../RoomCard/RoomNumPrice';
-import { guests } from '../constants';
 import { QuantitySelector } from '../index';
 
 interface BookingProps {
@@ -11,8 +10,15 @@ interface BookingProps {
   roomNum: number;
   duration: number;
 }
+const initialGuests = [
+  { value: 'adults', label: 'Взрослые' },
+  { value: 'children', label: 'Дети' },
+  { value: 'newborn', label: 'Младенцы' }
+];
 
 export const Booking = ({ price, roomNum, duration }: BookingProps) => {
+  const [guests, setGuests] = useState(initialGuests);
+
   return (
     <div className={styles.bookingContainer}>
       <div className={styles.bookingInfo}>

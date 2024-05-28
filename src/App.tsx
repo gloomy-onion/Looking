@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Footer, Header } from './components';
 import {
@@ -13,7 +13,6 @@ import {
 } from './ui-kit';
 import { Booking, LandingSearch, LoginForm, QuantitySelector, Registration, RoomCard } from './widgets';
 
-
 const guests = [
   { value: 'adults', label: 'Взрослые' },
   { value: 'children', label: 'Дети' },
@@ -27,6 +26,7 @@ const options = [
 
 export const App = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [checked, setIsChecked] = useState(false);
   const [likesCount, setLikesCount] = useState(1);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
@@ -36,7 +36,7 @@ export const App = () => {
     setLikesCount((prevCount) => (prevCount ? prevCount + 1 : prevCount - 1));
   };
 
-  const handleCheckboxChange = () => setIsClicked((prev) => !prev);
+  const handleCheckboxChange = () => setIsChecked((prev) => !prev);
 
   const onDateChange = (dates: [Date | null, Date | null]) => {
     const [start, end] = dates;
@@ -70,13 +70,13 @@ export const App = () => {
       <div style={{ width: '266px' }}>
         <RangeSlider label={'Slider'} description={'description'} range={'range'} />
       </div>
-      <Checkbox checkboxType={'toggle'} label={'toggle'} onClick={handleCheckboxChange} isClicked={isClicked} />
+      <Checkbox checkboxType={'toggle'} label={'toggle'} onChange={handleCheckboxChange} checked={checked} />
       <Checkbox
         checkboxType={'checkbox'}
         title={'Checkbox title'}
         label={'checkbox'}
-        isClicked={isClicked}
-        onClick={handleCheckboxChange}
+        checked={checked}
+        onChange={handleCheckboxChange}
       />
 
 </>

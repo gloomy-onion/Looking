@@ -30,15 +30,19 @@
 }
 
 .roomPrice, .roomReviews {
-  width: 120px;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.roomReviews {
+  width: 70px;
   display: flex;
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
-}
-
-.roomReviews {
-  width: 65px;
 }
 
 .roomCardUpper {
