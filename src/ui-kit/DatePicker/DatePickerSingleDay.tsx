@@ -11,7 +11,7 @@ import { getDateTimestamp, getToday } from './helpers';
 import { Button } from '../Button/Button';
 import { Typography } from '../Typography/Typography';
 
-interface DatePickerSingleDayProps {
+type DatePickerSingleDayProps = {
   label?: string;
 }
 

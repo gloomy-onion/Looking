@@ -3,13 +3,13 @@ import React from 'react';
 import styles from './Checkbox.module.scss';
 import { Typography } from '../Typography/Typography';
 
-interface CheckboxProps {
+type CheckboxProps = {
   checkboxType?: 'checkbox' | 'toggle';
   label?: string;
   title?: string;
   checked: boolean;
   onChange: () => void;
-}
+};
 
 export const Checkbox = ({ checkboxType = 'checkbox', label, title, onChange, checked }: CheckboxProps) => {
   return (

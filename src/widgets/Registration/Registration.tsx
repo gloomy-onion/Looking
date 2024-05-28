@@ -9,8 +9,8 @@ const gender = [
 ];
 
 export const Registration = () => {
-  const [checked, setIsChecked] = useState(false);
-  const handleCheckboxChange = () => setIsChecked((prev) => !prev);
+  const [isSpecialOffersSelected, setIsSpecialOffersSelected] = useState(false);
+  const handleCheckboxChange = () => setIsSpecialOffersSelected((prev) => !prev);
 
   return (
     <div className={styles.regContainer}>
@@ -29,7 +29,7 @@ export const Registration = () => {
         <Checkbox
           checkboxType={'toggle'}
           label={'Получать спецпредложения'}
-          checked={checked}
+          checked={isSpecialOffersSelected}
           onChange={handleCheckboxChange}
         />
       </div>

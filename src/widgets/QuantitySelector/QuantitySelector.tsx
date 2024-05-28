@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { DropdownContainer , QuantityItem } from '../../ui-kit';
+import { DropdownContainer, QuantityItem } from '../../ui-kit';
 
-interface Item {
+type Item = {
   value: string;
   label: string;
-}
+};
 
-interface QuantitySelectorProps {
+type QuantitySelectorProps = {
   items: Item[];
   label?: string;
-}
+};
 
 export const QuantitySelector = ({ items, label }: QuantitySelectorProps) => {
   return (

@@ -10,7 +10,7 @@ import { PLACEHOLDER } from './constants';
 import { getDateTimestamp, getDateValue, getToday } from './helpers';
 import { Button, DropdownContainer } from '..';
 
-interface DatePickerProps {
+type DatePickerProps = {
   selected?: Date | null | [Date, Date];
   minDate?: Date;
   startDate?: Date | null;
@@ -18,13 +18,14 @@ interface DatePickerProps {
   onChange?: (date: [Date | null, Date | null]) => void;
   label?: string;
   value?: string;
-}
+};
 
 registerLocale('ru', ru);
 
 export const PickDate: React.FC<DatePickerProps> = ({ label, value, onChange, startDate, endDate, ...otherProps }) => {
   const { today, midnightToday } = getToday();
 
+// TODO: посмотри как можно сделать двойной
   return (
     <>
       <DropdownContainer value={getDateValue(startDate, endDate)} placeholder={PLACEHOLDER} label={label}>

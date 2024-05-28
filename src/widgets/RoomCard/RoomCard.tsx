@@ -5,13 +5,13 @@ import { RoomNumPrice } from './RoomNumPrice';
 import { roomImg } from '../../assets/img/roomImg';
 import { ImageCarousel, Rating, Typography } from '../../ui-kit';
 
-interface RoomCardProps {
+type RoomCardProps = {
   price: number;
   reviews: number;
   rating: number;
   roomNum: number;
   lux?: boolean;
-}
+};
 
 export const RoomCard = ({ price, reviews, rating, roomNum, lux }: RoomCardProps) => {
   return (
@@ -24,18 +24,14 @@ export const RoomCard = ({ price, reviews, rating, roomNum, lux }: RoomCardProps
           <RoomNumPrice price={price} roomNum={roomNum} lux />
         </div>
         <div className={styles.roomCardBottom}>
-          <div>
-            <Rating initialRating={rating} />
-          </div>
+          <Rating initialRating={rating} />
           <div className={styles.roomReviews}>
             <Typography size={'xs'} color={'dark50'} weight={700}>
               {reviews}
             </Typography>
-            <div>
-              <Typography size={'xs'} color={'dark50'}>
-                Отзывов
-              </Typography>
-            </div>
+            <Typography size={'xs'} color={'dark50'}>
+              Отзывов
+            </Typography>
           </div>
         </div>
       </div>

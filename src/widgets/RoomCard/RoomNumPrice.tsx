@@ -3,11 +3,11 @@ import React from 'react';
 import styles from './RoomCard.module.scss';
 import { Typography } from '../../ui-kit';
 
-interface RoomNumPriceProps {
+type RoomNumPriceProps = {
   price: number;
   roomNum: number;
   lux?: boolean;
-}
+};
 
 export const RoomNumPrice = ({ price, roomNum, lux }: RoomNumPriceProps) => {
   return (

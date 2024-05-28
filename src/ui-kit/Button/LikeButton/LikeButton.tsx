@@ -6,18 +6,18 @@ import { ReactComponent as LikeEmpty } from '../../../assets/img/LikeEmpty.svg';
 import { ReactComponent as LikeFilled } from '../../../assets/img/LikeFilled.svg';
 import { Typography } from '../../Typography/Typography';
 
-interface LikeButtonProps {
-  isClicked: boolean;
+type LikeButtonProps = {
+  filled: boolean;
   likesCount: number;
   onClick: () => void;
-}
+};
 
-export const LikeButton = ({ isClicked, likesCount, onClick }: LikeButtonProps) => {
-  const likeColor = isClicked ? 'purple' : 'dark25';
+export const LikeButton = ({ filled, likesCount, onClick }: LikeButtonProps) => {
+  const likeColor = filled ? 'purple' : 'dark25';
 
   return (
-    <div className={cn(styles.likeButton, { [styles.clicked]: isClicked })} onClick={onClick}>
-      {isClicked ? <LikeFilled /> : <LikeEmpty />}
+    <div className={cn(styles.likeButton, { [styles.clicked]: filled })} onClick={onClick}>
+      {filled ? <LikeFilled /> : <LikeEmpty />}
       <Typography size={'xs'} color={likeColor}>
         {likesCount}
       </Typography>

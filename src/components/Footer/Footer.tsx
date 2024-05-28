@@ -10,7 +10,7 @@ import { TextField, Typography } from '../../ui-kit';
 
 const footerLinks = [
   [{ name: 'Навигация', value: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }],
-  [{ name: 'Навигация', value: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }],
+  [{ name: 'О нас', value: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }],
   [{ name: 'Служба поддержки', value: ['Соглашения', 'Сообщества', 'Связь с нами'] }],
 ];
 
@@ -21,7 +21,7 @@ export const Footer = () => {
         <div>
           <Logo className={styles.footerLogo} />
           <Typography size={'s'} color={'dark75'}>
-            {'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'}
+            Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
           </Typography>
         </div>
         <div className={styles.footerColumns}>
@@ -33,7 +33,7 @@ export const Footer = () => {
               подписка
             </Typography>
             <Typography size={'s'} color={'dark75'}>
-              {'Получайте специальные предложения и новости сервиса'}
+              Получайте специальные предложения и новости сервиса
             </Typography>
             <TextField textFieldType={'email'} placeholder={'Email'} hasButton />
           </div>

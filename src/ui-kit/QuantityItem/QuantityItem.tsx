@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import styles from './QuantityItem.module.scss';
 import { Typography } from '../Typography/Typography';
 
-interface QuantityItemProps {
+type QuantityItemProps = {
   label: string;
-}
+};
 
 export const QuantityItem = ({ label }: QuantityItemProps) => {
   const [count, setCount] = useState(0);

@@ -35,7 +35,7 @@
   position: absolute;
   cursor: pointer;
   top: 55px;
-  z-index: 6;
+  z-index: 1;
 }
 
 .carouselPrev:after {
@@ -83,7 +83,6 @@
   border: 1px solid white;
   border-radius: 50%;
   content: '';
-  z-index: 6;
 }
 
 .carouselDotActive {
@@ -103,5 +102,4 @@
   position: absolute;
   top: 130px;
   right: 10px;
-  z-index: 6;
 }

@@ -5,12 +5,12 @@ import styles from './Button.module.scss';
 import { getLabelColor } from './helpers';
 import { Typography } from '../Typography/Typography';
 
-interface ButtonProps {
+type ButtonProps = {
   disabled?: boolean;
   buttonType?: 'filled' | 'outline' | 'clear' | 'withIcon' | 'previous' | 'next';
   label?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-}
+};
 
 export const Button = ({
   buttonType = 'filled',

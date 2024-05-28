@@ -4,9 +4,9 @@ import styles from './Header.module.scss';
 import { ReactComponent as Logo } from '../../assets/img/Logo.svg';
 import { Button, Collapse, Typography } from '../../ui-kit';
 
-interface HeaderProps {
+type HeaderProps = {
   isAuth: boolean;
-}
+};
 
 export const Header = ({ isAuth }: HeaderProps) => {
   return (

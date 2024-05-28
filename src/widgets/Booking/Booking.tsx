@@ -5,7 +5,7 @@ import { Button, PickDate, Typography } from '../../ui-kit';
 import { RoomNumPrice } from '../RoomCard/RoomNumPrice';
 import { QuantitySelector } from '../index';
 
-interface BookingProps {
+type BookingProps = {
   price: number;
   roomNum: number;
   duration: number;

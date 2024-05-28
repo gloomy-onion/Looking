@@ -13,9 +13,7 @@ export const Rating = ({ initialRating = 3 }: RatingProps) => {
   const [hover, setHover] = useState(0);
 
   const handleStarClick = (index: number) => {
-    if (index + 1 <= 5) {
-      setRating(index + 1);
-    }
+    setRating(index + 1);
   };
 
   const handleStarHover = (index: number) => {

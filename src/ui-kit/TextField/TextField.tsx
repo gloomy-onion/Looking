@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import styles from './TextField.module.scss';
 import { Typography } from '../Typography/Typography';
 
-interface TextFieldProps {
+type TextFieldProps = {
   placeholder?: string;
   textFieldType?: 'text' | 'password' | 'email';
   label?: string;
   hasButton?: boolean;
-}
+};
 
 export const TextField = ({
   hasButton = false,

@@ -9,11 +9,11 @@ type RadioOption = {
   label: string;
 };
 
-interface RadioButtonGroupProps {
+type RadioButtonGroupProps = {
   options: RadioOption[];
   label?: string;
   name: string;
-}
+};
 
 export const RadioButtonGroup = ({ options, label, name }: RadioButtonGroupProps) => {
   const [selectedValue, setSelectedValue] = useState('');

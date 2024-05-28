@@ -3,14 +3,14 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import { Typography } from '../../ui-kit';
 
-interface FooterLinks {
+type FooterLinks = {
   name: string;
   value: string[];
-}
+};
 
-interface FooterLinksProps {
+type FooterLinksProps = {
   links: FooterLinks[];
-}
+};
 
 export const FooterLinks = ({ links }: FooterLinksProps) => {
   return (
@@ -22,7 +22,7 @@ export const FooterLinks = ({ links }: FooterLinksProps) => {
           </Typography>
           {link.value.map((value) => (
             <div key={value} className={styles.columnItem}>
-              <Typography  color={'dark50'} size={'s'}>
+              <Typography color={'dark50'} size={'s'}>
                 {value}
               </Typography>
             </div>

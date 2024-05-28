@@ -14,7 +14,7 @@ export type PaginationProps = {
 export const Pagination = ({ totalPages = 10, pageSize = 5, itemsLength = 20 }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  // const totalPages = Math.ceil(items.length / pageSize)
+  // TODO: посмотри пагинацию
   const handlePageClick = (page: string | number) => {
     if (typeof page === 'string') {
       return;

@@ -1,16 +1,16 @@
 import cn from 'classnames';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import styles from './ImageCarousel.module.scss';
 
-interface ImageItem {
+type ImageItem = {
   label: string;
   imgPath: string;
-}
+};
 
-interface ImageCarouselProps {
+type ImageCarouselProps = {
   items: ImageItem[];
-}
+};
 
 export const ImageCarousel = ({ items }: ImageCarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -27,9 +27,8 @@ export const ImageCarousel = ({ items }: ImageCarouselProps) => {
     });
   };
 
-
   return (
-    <div className={styles.carouselContainer} >
+    <div className={styles.carouselContainer}>
       <button
         className={styles.carouselPrev}
         onClick={(e) => {

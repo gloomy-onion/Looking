@@ -25,14 +25,14 @@ const options = [
 ];
 
 export const App = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [filled, setIsFilled] = useState(false);
   const [checked, setIsChecked] = useState(false);
   const [likesCount, setLikesCount] = useState(1);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
 
   const handleLikeChange = () => {
-    setIsClicked((prevState) => !prevState);
+    setIsFilled((prevState) => !prevState);
     setLikesCount((prevCount) => (prevCount ? prevCount + 1 : prevCount - 1));
   };
 
@@ -46,11 +46,11 @@ export const App = () => {
 
   return (
     <>
-      <div style={{ width: '318px' , display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-        <PickDate startDate={startDate} onChange={onDateChange}/>
-        <PickDate endDate={endDate} onChange={onDateChange}/>
+      <div style={{ width: '318px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+        <PickDate startDate={startDate} onChange={onDateChange} />
+        <PickDate endDate={endDate} onChange={onDateChange} />
       </div>
-       <Footer />
+      <Footer />
       <Header isAuth={false} />
       <Booking price={200} roomNum={233} duration={4} />
       <RoomCard rating={3} price={7000} roomNum={363} reviews={12} lux />
@@ -60,12 +60,12 @@ export const App = () => {
       <div style={{ width: '500px' }}>
         <Pagination />
       </div>
-      <LikeButton onClick={handleLikeChange} isClicked={isClicked} likesCount={likesCount} />
+      <LikeButton onClick={handleLikeChange} filled={filled} likesCount={likesCount} />
       <div style={{ width: '266px' }}>
         <CollapseExample />
         <QuantitySelector items={guests} />
       </div>
-      <Rating initialRating={4}/>
+      <Rating initialRating={4} />
       <RadioButtonGroup options={options} name={'radio'} />
       <div style={{ width: '266px' }}>
         <RangeSlider label={'Slider'} description={'description'} range={'range'} />
@@ -78,7 +78,6 @@ export const App = () => {
         checked={checked}
         onChange={handleCheckboxChange}
       />
-
-</>
+    </>
   );
 };
