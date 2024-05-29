@@ -1,26 +1,24 @@
 import cn from 'classnames';
-import React, { useState } from 'react';
+import React from 'react';
 
 import styles from './LikeButton.module.scss';
 import { ReactComponent as LikeEmpty } from '../../../assets/img/LikeEmpty.svg';
 import { ReactComponent as LikeFilled } from '../../../assets/img/LikeFilled.svg';
 import { Typography } from '../../Typography/Typography';
 
-export const LikeButton = () => {
-  const [isClicked, setIsClicked] = useState(false);
-  const [likesCount, setLikesCount] = useState(1);
+type LikeButtonProps = {
+  filled: boolean;
+  likesCount: number;
+  onClick: () => void;
+};
 
-  const handleChange = () => {
-    setIsClicked((prevState) => !prevState);
-    setLikesCount((prevCount) => (prevCount ? prevCount + 1 : prevCount - 1));
-  };
-
-  const getColor = () => (isClicked ? 'purple' : 'dark25');
+export const LikeButton = ({ filled, likesCount, onClick }: LikeButtonProps) => {
+  const likeColor = filled ? 'purple' : 'dark25';
 
   return (
-    <div className={cn(styles.likeButton, { [styles.clicked]: isClicked })} onClick={handleChange}>
-      {isClicked ? <LikeFilled /> : <LikeEmpty />}
-      <Typography size={'xs'} color={getColor()}>
+    <div className={cn(styles.likeButton, { [styles.clicked]: filled })} onClick={onClick}>
+      {filled ? <LikeFilled /> : <LikeEmpty />}
+      <Typography size={'xs'} color={likeColor}>
         {likesCount}
       </Typography>
     </div>

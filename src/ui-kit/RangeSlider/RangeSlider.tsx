@@ -4,11 +4,11 @@ import ReactSlider from 'react-slider';
 import styles from './RangeSlider.module.scss';
 import { Typography } from '../Typography/Typography';
 
-interface RangeSliderProps {
+type RangeSliderProps = {
   label?: string;
   description?: string;
   range?: string;
-}
+};
 
 export const RangeSlider = ({ label, description }: RangeSliderProps) => {
   const [value, setValue] = React.useState([25, 50]);

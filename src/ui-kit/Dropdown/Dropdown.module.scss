@@ -9,7 +9,7 @@
 
 .dropdown {
   align-items: center;
-  padding: 14px;
+  padding-left: 14px;
   border: 1px solid $dark25;
   border-radius: 4px;
   width: 100%;
@@ -22,6 +22,9 @@
 }
 
 .dropdownBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: relative;
 }
 
@@ -33,10 +36,23 @@
   border-radius: 4px 4px 0 0;
 }
 
-.arrow {
+.dropdownExpanded {
+  border: 1px solid $dark25;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  flex-direction: column;
   position: absolute;
+  background-color: white;
+  top: calc(100%);
+  left: 0;
+  width: 318px;
+  z-index: 1;
+}
+
+.arrow {
+  position: relative;
   right: 0;
-  width: 44px;
   height: 44px;
   border: none;
   background: none;
@@ -56,9 +72,8 @@
 }
 
 .arrowExpanded {
-  position: absolute;
+  position: relative;
   right: 0;
-  width: 44px;
   height: 44px;
   border: none;
   background: none;
@@ -75,22 +90,4 @@
   border-top: 2px solid;
   border-right: 2px solid;
   transform: rotate(-45deg);
-}
-
-.dropdownExpanded {
-  border: 1px solid $dark25;
-  border-top: 0;
-  border-radius: 0 0 4px 4px;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  z-index: 999;
-  background-color: white;
-}
-
-.dropdownButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }

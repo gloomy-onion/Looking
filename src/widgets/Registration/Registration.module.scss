@@ -1,0 +1,39 @@
+@import '../../variables';
+
+.regContainer {
+  width: 380px;
+  height: 646px;
+  border: 1px solid rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 0 25px 0 $dark5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.regBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.regNameBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 130px;
+  width: 100%;
+}
+
+.regMailBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140px;
+  width: 100%;
+}
+

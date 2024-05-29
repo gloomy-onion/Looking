@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import { Footer, Header } from './components';
 import {
-  BulletList,
-  Button,
   Checkbox,
   CollapseExample,
   LikeButton,
@@ -11,14 +10,12 @@ import {
   RadioButtonGroup,
   RangeSlider,
   Rating,
-  TextField,
-  Typography,
 } from './ui-kit';
-import {Registration} from './widgets';
+import { Booking, LandingSearch, LoginForm, QuantitySelector, Registration, RoomCard } from './widgets';
 
-const rules = [
-  { id: '1', value: 'No pets allowed' },
-  { id: '2', value: 'No smoking' },
+const guests = [
+  { value: 'adults', label: 'Взрослые' },
+  { value: 'children', label: 'Дети' },
 ];
 
 const options = [
@@ -26,44 +23,61 @@ const options = [
   { value: 'option2', label: 'option 2' },
   { value: 'option3', label: 'option 3' },
 ];
+
 export const App = () => {
+  const [filled, setIsFilled] = useState(false);
+  const [checked, setIsChecked] = useState(false);
+  const [likesCount, setLikesCount] = useState(1);
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+
+  const handleLikeChange = () => {
+    setIsFilled((prevState) => !prevState);
+    setLikesCount((prevCount) => (prevCount ? prevCount + 1 : prevCount - 1));
+  };
+
+  const handleCheckboxChange = () => setIsChecked((prev) => !prev);
+
+  const onDateChange = (dates: [Date | null, Date | null]) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
+
   return (
     <>
-      <Registration/>
-      <div style={{ width: '500px' }}>
-        <Pagination  />
+      <div style={{ width: '318px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+        <PickDate startDate={startDate} onChange={onDateChange} />
+        <PickDate endDate={endDate} onChange={onDateChange} />
       </div>
-      <BulletList items={rules} title={'Rules'} />
-      <LikeButton />
+      <Footer />
+      <Header isAuth={false} />
+      <Booking price={200} roomNum={233} duration={4} />
+      <RoomCard rating={3} price={7000} roomNum={363} reviews={12} lux />
+      <LoginForm />
+      <LandingSearch />
+      <Registration />
+      <div style={{ width: '500px' }}>
+        <Pagination />
+      </div>
+      <LikeButton onClick={handleLikeChange} filled={filled} likesCount={likesCount} />
       <div style={{ width: '266px' }}>
         <CollapseExample />
+        <QuantitySelector items={guests} />
       </div>
-      <Rating />
+      <Rating initialRating={4} />
       <RadioButtonGroup options={options} name={'radio'} />
       <div style={{ width: '266px' }}>
         <RangeSlider label={'Slider'} description={'description'} range={'range'} />
       </div>
-      <Checkbox checkboxType={'toggle'} label={'toggle'} />
-      <Checkbox checkboxType={'checkbox'} title={'Checkbox title'} label={'checkbox'} />
-      <div style={{ width: '322px' }}>
-        <PickDate />
-      </div>
-      <TextField />
-      <TextField label={'masked text field'} textFieldType={'date'} />
-      <TextField label={'subscription text field'} textFieldType={'email'} placeholder={'Email'} hasButton />
-      <Typography as={'h1'} color={'dark100'} upperCase>
-        hello h1
-      </Typography>
-      <Typography as={'h2'} size={'s'}>
-        hello h2
-      </Typography>
-      <Typography as={'div'} weight={700} size={'l'}>
-        hello div
-      </Typography>
-      <Button buttonType={'filled'} label={'filled button'} />
-      <Button buttonType={'outline'} label={'outline button'} />
-      <Button buttonType={'clear'} label={'clear button'} />
-      <Button buttonType={'withIcon'} label={'Кнопка со стрелкой'} />
+      <Checkbox checkboxType={'toggle'} label={'toggle'} onChange={handleCheckboxChange} checked={checked} />
+      <Checkbox
+        checkboxType={'checkbox'}
+        title={'Checkbox title'}
+        label={'checkbox'}
+        checked={checked}
+        onChange={handleCheckboxChange}
+      />
     </>
   );
 };

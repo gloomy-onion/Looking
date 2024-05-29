@@ -2,6 +2,7 @@ import cn from 'classnames';
 import React, { useState } from 'react';
 
 import styles from './Pagination.module.scss';
+import { Button } from '../Button/Button';
 import { Typography } from '../Typography/Typography';
 
 export type PaginationProps = {
@@ -11,10 +12,9 @@ export type PaginationProps = {
 };
 
 export const Pagination = ({ totalPages = 10, pageSize = 5, itemsLength = 20 }: PaginationProps) => {
-
   const [currentPage, setCurrentPage] = useState(1);
 
-  // const totalPages = Math.ceil(items.length / pageSize)
+  // TODO: посмотри пагинацию
   const handlePageClick = (page: string | number) => {
     if (typeof page === 'string') {
       return;
@@ -24,7 +24,7 @@ export const Pagination = ({ totalPages = 10, pageSize = 5, itemsLength = 20 }: 
     }
   };
 
-const generatePageNumbers = () => {
+  const generatePageNumbers = () => {
     const pages = [];
     const middlePages = Math.floor(totalPages / 2);
 
@@ -72,10 +72,7 @@ const generatePageNumbers = () => {
 
   return (
     <nav className={styles.pagination}>
-      <div
-        className={cn(styles.previous, { [styles.disabled]: currentPage === 1 })}
-        onClick={() => handlePageClick(currentPage - 1)}
-      />
+      <Button buttonType={'previous'} disabled={currentPage === 1} onClick={() => handlePageClick(currentPage - 1)} />
       {pageNums.map((page) => (
         <div
           key={page}
@@ -88,9 +85,10 @@ const generatePageNumbers = () => {
         </div>
       ))}
 
-      <div
+      <Button
+        buttonType={'next'}
         onClick={() => handlePageClick(currentPage + 1)}
-        className={cn(styles.next, { [styles.disabled]: currentPage === totalPages })}
+        disabled={currentPage === totalPages}
       />
     </nav>
   );

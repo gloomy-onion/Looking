@@ -1,6 +1,6 @@
-@import '../../../variables';
+@import '../../variables';
 
-.dropdownItem {
+.quantityItem {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,18 +9,11 @@
   height: 40px;
 }
 
-.dropdownItemButtons {
+.quantityItemButtons {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-}
-
-.dropdownButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
 }
 
 .plusBtn {
@@ -43,7 +36,6 @@
   top: 14px;
   left: 9px;
   right: 8px;
-  z-index: 9;
 }
 
 .plusBtn::before {
@@ -55,7 +47,6 @@
   left: 50%;
   top: 9px;
   bottom: 8px;
-  z-index: 9;
 }
 
 
@@ -79,7 +70,6 @@
   top: 50%;
   left: 9px;
   right: 9px;
-  z-index: 9;
 }
 
 .disabled {
@@ -101,5 +91,4 @@
   top: 17px;
   left: 10px;
   right: 10px;
-  z-index: 9;
 }

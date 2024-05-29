@@ -44,6 +44,7 @@ button:active:not([disabled]) {
 }
 
 .filled {
+  height: 44px;
   border-radius: 30px;
   border: none;
   background: $purpleGradient;
@@ -109,4 +110,89 @@ button:active:not([disabled]) {
 
 .withIcon:active:not([disabled]) {
   transform: scale(.99)
+}
+
+
+.next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: $greenGradient;
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.next:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  right: 13px;
+  top: 50%
+}
+
+.next:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  right: 3px;
+  top: 15px;
+  left: 14px;
+}
+
+.previous {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: $greenGradient;
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.previous:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  right: 13px;
+  top: 50%
+}
+
+.previous:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(225deg);
+  right: 3px;
+  top: 15px;
+  left: 11px;
+}
+
+.active {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: $purpleGradient;
+}
+
+.disabled {
+  background: $dark25;
+  cursor: not-allowed;
 }

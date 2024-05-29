@@ -1,16 +1,17 @@
 import React from 'react';
+
 import styles from './BulletList.module.scss';
 import { Typography } from '../Typography/Typography';
 
-interface Item {
+type Item = {
   id: string;
   value: string;
-}
+};
 
-interface BulletListProps {
+type BulletListProps = {
   items: Item[];
   title: string;
-}
+};
 
 export const BulletList = ({ items, title }: BulletListProps) => {
   return (

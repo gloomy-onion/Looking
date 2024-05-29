@@ -2,21 +2,21 @@ import cn from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './Dropdown.module.scss';
-import { Button } from '../Button/Button';
 import { Typography } from '../Typography/Typography';
 
-interface DropdownProps {
+type DropdownProps = {
   label?: string;
   children?: React.ReactNode;
   value?: string | null;
   placeholder?: string | null;
-}
+};
 
 type ComposedPath = () => Node[];
 
-export const DropdownContainer = ({ label = 'dropdown', children, value, placeholder }: DropdownProps) => {
+export const DropdownContainer = ({ label, children, value, placeholder }: DropdownProps) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
   const toggleDropDown = () => {
     setShowDropDown((prevState) => !prevState);
   };
@@ -56,17 +56,13 @@ export const DropdownContainer = ({ label = 'dropdown', children, value, placeho
           }}
         >
           <Typography color={'dark75'} size={'s'}>
-            {value}
+            {value || placeholder}
           </Typography>
           <button className={showDropDown ? styles.arrowExpanded : styles.arrow} />
         </div>
         {showDropDown && (
           <div ref={dropdownRef} className={styles.dropdownExpanded}>
             {children}
-            <div className={styles.dropdownButtons}>
-              <Button label={'очистить'} buttonType={'clear'} />
-              <Button label={'применить'} buttonType={'clear'} />
-            </div>
           </div>
         )}
       </div>

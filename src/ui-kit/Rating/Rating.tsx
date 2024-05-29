@@ -4,8 +4,12 @@ import styles from './Rating.module.scss';
 import { ReactComponent as Star } from '../../assets/img/Star.svg';
 import { ReactComponent as StarFilled } from '../../assets/img/StarFilled.svg';
 
-export const Rating = () => {
-  const [rating, setRating] = useState(0);
+type RatingProps = {
+  initialRating?: number;
+};
+
+export const Rating = ({ initialRating = 3 }: RatingProps) => {
+  const [rating, setRating] = useState(initialRating);
   const [hover, setHover] = useState(0);
 
   const handleStarClick = (index: number) => {

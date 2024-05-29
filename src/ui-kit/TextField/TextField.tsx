@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import styles from './TextField.module.scss';
 import { Typography } from '../Typography/Typography';
 
-interface TextFieldProps {
+type TextFieldProps = {
   placeholder?: string;
-  textFieldType?: 'text' | 'date' | 'password' | 'email';
+  textFieldType?: 'text' | 'password' | 'email';
   label?: string;
   hasButton?: boolean;
-}
+};
 
 export const TextField = ({
   hasButton = false,
@@ -31,8 +31,6 @@ export const TextField = ({
       <div className={styles.textFieldInputCover}>
         <input
           type={textFieldType}
-          max={'2050-12-31'}
-          min={'2000-01-01'}
           placeholder={placeholder}
           className={styles.textFieldInput}
           value={inputValue}

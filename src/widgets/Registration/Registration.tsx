@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './Registration.module.scss';
-import { Button, Checkbox, RadioButtonGroup, TextField, Typography } from '../../ui-kit';
+import { Button, Checkbox, DatePickerSingleDay, RadioButtonGroup, TextField, Typography } from '../../ui-kit';
 
 const gender = [
   { value: 'male', label: 'Мужской' },
@@ -9,29 +9,37 @@ const gender = [
 ];
 
 export const Registration = () => {
+  const [isSpecialOffersSelected, setIsSpecialOffersSelected] = useState(false);
+  const handleCheckboxChange = () => setIsSpecialOffersSelected((prev) => !prev);
+
   return (
     <div className={styles.regContainer}>
       <Typography weight={700} size={'l'} color={'dark100'}>
-        {'Регистрация  аккаунта'}
+        Регистрация аккаунта
       </Typography>
-      <TextField textFieldType={'text'} placeholder={'Имя'} />
-      <TextField textFieldType={'text'} placeholder={'Фамилия'} />
-      <RadioButtonGroup options={gender} name={'gender'} />
-      <Typography weight={700} size={'xs'} color={'dark100'} upperCase>
-        {'дата рождения'}
-      </Typography>
-      <TextField textFieldType={'date'} placeholder={'ДД.ММ.ГГГГ'} />
-      <Typography weight={700} size={'xs'} color={'dark100'} upperCase>
-        {'Данные для входа в сервис'}
-      </Typography>
-      <TextField textFieldType={'email'} placeholder={'Email'} />
-      <TextField textFieldType={'password'} placeholder={'Пароль'} />
-      <Checkbox checkboxType={'toggle'} label={'Получать спецпредложения'} />
+      <div className={styles.regNameBlock}>
+        <TextField textFieldType={'text'} placeholder={'Имя'} />
+        <TextField textFieldType={'text'} placeholder={'Фамилия'} />
+        <RadioButtonGroup options={gender} name={'gender'} />
+      </div>
+      <DatePickerSingleDay label={'дата рождения'} />
+      <div className={styles.regMailBlock}>
+        <TextField textFieldType={'email'} placeholder={'Email'} label={'Данные для входа в сервис'} />
+        <TextField textFieldType={'password'} placeholder={'Пароль'} />
+        <Checkbox
+          checkboxType={'toggle'}
+          label={'Получать спецпредложения'}
+          checked={isSpecialOffersSelected}
+          onChange={handleCheckboxChange}
+        />
+      </div>
       <Button label={'Перейти к оплате'} buttonType={'withIcon'} />
-      <Typography color={'dark100'} size={'s'}>
-        {'Уже есть аккаунт'}
-      </Typography>
-      <Button label={'Войти'} buttonType={'outline'} />
+      <div className={styles.regBottom}>
+        <Typography color={'dark100'} size={'s'}>
+          Уже есть аккаунт
+        </Typography>
+        <Button label={'Войти'} buttonType={'outline'} />
+      </div>
     </div>
   );
 };
