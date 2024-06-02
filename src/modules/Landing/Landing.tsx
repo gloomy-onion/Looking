@@ -10,7 +10,7 @@ export const Landing = () => {
       <div className={styles.landingSearch}>
         <LandingSearch />
       </div>
-      <img src={MainPagePic} className={styles.landingImage} />
+      <img alt={'Hotel room'} src={MainPagePic} className={styles.landingImage} />
     </div>
   );
 };
