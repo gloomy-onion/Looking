@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Footer, Header } from './components';
+import { Footer, Header, Landing } from './modules';
 import {
   Checkbox,
   CollapseExample,
@@ -46,6 +46,7 @@ export const App = () => {
 
   return (
     <>
+      <Landing />
       <div style={{ width: '318px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
         <PickDate startDate={startDate} onChange={onDateChange} />
         <PickDate endDate={endDate} onChange={onDateChange} />

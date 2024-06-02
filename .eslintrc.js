@@ -82,19 +82,19 @@ module.exports = {
       {
         paths: [
           {
-            name: 'styled-components',
-            message: 'Please import from styled-components/macro.',
+            name: 'styled-modules',
+            message: 'Please import from styled-modules/macro.',
           },
           {
             name: 'reflexbox',
-            message: 'Please import from reflexbox/styled-components.',
+            message: 'Please import from reflexbox/styled-modules.',
           },
           {
             name: 'lodash',
             message: 'Please import from lodash/some_module',
           },
         ],
-        patterns: ['!styled-components/macro', '!reflexbox/styled-components', '!lodash/*'],
+        patterns: ['!styled-modules/macro', '!reflexbox/styled-modules', '!lodash/*'],
       },
     ],
     'no-underscore-dangle': 'warn',
