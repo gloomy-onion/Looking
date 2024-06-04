@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import styles from './QuantityItem.module.scss';
 import { Typography } from '../Typography/Typography';
 
 type QuantityItemProps = {
   label: string;
+  count: number;
+  onClickPlus: () => void;
+  onClickMinus: () => void;
 };
 
-export const QuantityItem = ({ label }: QuantityItemProps) => {
-  const [count, setCount] = useState(0);
-  const onClickPlus = () => setCount((prevCount) => prevCount + 1);
-  const onClickMinus = () => setCount((prevCount) => (prevCount >= 1 ? prevCount - 1 : prevCount));
+export const QuantityItem = ({ label, count, onClickMinus, onClickPlus }: QuantityItemProps) => {
+
 
   return (
     <div className={styles.quantityItem}>
