@@ -6,11 +6,11 @@ export type Guest = {
   count: number;
 };
 
-interface GuestSliceState {
+type FilterSliceState = {
   guests: Guest[];
-}
+};
 
-const initialState: GuestSliceState = {
+const initialState: FilterSliceState = {
   guests: [
     { value: 'adults', label: 'Взрослые', count: 0 },
     { value: 'children', label: 'Дети', count: 0 },
@@ -18,7 +18,7 @@ const initialState: GuestSliceState = {
   ],
 };
 
-const guestSlice = createSlice({
+const filterSlice = createSlice({
   name: 'guest',
   initialState,
   reducers: {
@@ -26,15 +26,10 @@ const guestSlice = createSlice({
       const findItem = state.guests.find((guest) => guest.value === action.payload.value);
       if (findItem) {
         findItem.count++;
-      } else {
-        state.guests.push({
-          ...action.payload,
-          count: 1,
-        });
       }
     },
-    minusGuest(state, action: PayloadAction<string>) {
-      const findItem = state.guests.find((guest) => guest.value === action.payload);
+    minusGuest(state, action: PayloadAction<Guest>) {
+      const findItem = state.guests.find((guest) => guest.value === action.payload.value);
       if (findItem && findItem.count > 1) {
         findItem.count--;
       }
@@ -47,6 +42,6 @@ const guestSlice = createSlice({
   },
 });
 
-export const { addGuest, minusGuest, clearAllGuests } = guestSlice.actions;
+export const { addGuest, minusGuest, clearAllGuests } = filterSlice.actions;
 
-export default guestSlice.reducer;
+export default filterSlice.reducer;

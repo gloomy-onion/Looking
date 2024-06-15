@@ -10,7 +10,7 @@ type QuantityItemProps = {
   onClickMinus: () => void;
 };
 
-export const QuantityItem = ({ label, count, onClickMinus, onClickPlus }: QuantityItemProps) => {
+export const QuantityItem = ({label, onClickPlus, onClickMinus, count}: QuantityItemProps) => {
 
 
   return (

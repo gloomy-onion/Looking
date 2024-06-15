@@ -1,26 +1,23 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 
-import {addGuest, Guest, minusGuest, clearAllGuests} from './GuestsSlice';
 import styles from './Landing.module.scss';
-import { initialGuests } from './constants/constants';
 import MainPagePic from '../../assets/img/MainPagePic.png';
+import { addGuest, clearAllGuests, Guest, minusGuest } from '../../redux/Slices/FilterSlice';
+import { useAppDispatch } from '../../redux/store';
 import { LandingSearch } from '../../widgets';
 
 export const Landing = () => {
-  const [guests, setGuests] = useState(initialGuests);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const onClickPlus = () => {
     dispatch(addGuest({} as Guest));
   };
   const onClickMinus = () => {
-    dispatch(minusGuest());
+    dispatch(minusGuest({} as Guest));
   };
   const handleClear = () => {
     dispatch(clearAllGuests());
   };
-
 
   return (
     <div>
