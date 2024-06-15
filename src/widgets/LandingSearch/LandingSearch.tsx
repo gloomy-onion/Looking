@@ -13,7 +13,7 @@ type Guest = {
 type LandingSearchProps = {
   guests: Guest[];
   onClickClear: () => void;
-  onClickApply: () => void;
+  onClickApply?: () => void;
   onClickPlus: () => void;
   onClickMinus: () => void;
 };

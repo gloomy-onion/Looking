@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { RootState } from '../store';
+
 export type Guest = {
   value: string;
   label: string;
@@ -30,7 +32,7 @@ const filterSlice = createSlice({
     },
     minusGuest(state, action: PayloadAction<Guest>) {
       const findItem = state.guests.find((guest) => guest.value === action.payload.value);
-      if (findItem && findItem.count > 1) {
+      if (findItem && findItem.count > 0) {
         findItem.count--;
       }
     },
@@ -42,6 +44,7 @@ const filterSlice = createSlice({
   },
 });
 
+export const selectGuests = (state: RootState) => state.filter;
 export const { addGuest, minusGuest, clearAllGuests } = filterSlice.actions;
 
 export default filterSlice.reducer;
