@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Footer, Header } from './components';
+import { Footer, Header, Landing } from './modules';
 import {
   Checkbox,
   CollapseExample,
@@ -11,12 +11,8 @@ import {
   RangeSlider,
   Rating,
 } from './ui-kit';
-import { Booking, LandingSearch, LoginForm, QuantitySelector, Registration, RoomCard } from './widgets';
+import { Booking, LoginForm,  Registration, RoomCard } from './widgets';
 
-const guests = [
-  { value: 'adults', label: 'Взрослые' },
-  { value: 'children', label: 'Дети' },
-];
 
 const options = [
   { value: 'option1', label: 'option 1' },
@@ -46,16 +42,15 @@ export const App = () => {
 
   return (
     <>
+      <Landing />
       <div style={{ width: '318px', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
         <PickDate startDate={startDate} onChange={onDateChange} />
         <PickDate endDate={endDate} onChange={onDateChange} />
       </div>
       <Footer />
       <Header isAuth={false} />
-      <Booking price={200} roomNum={233} duration={4} />
       <RoomCard rating={3} price={7000} roomNum={363} reviews={12} lux />
       <LoginForm />
-      <LandingSearch />
       <Registration />
       <div style={{ width: '500px' }}>
         <Pagination />
@@ -63,7 +58,6 @@ export const App = () => {
       <LikeButton onClick={handleLikeChange} filled={filled} likesCount={likesCount} />
       <div style={{ width: '266px' }}>
         <CollapseExample />
-        <QuantitySelector items={guests} />
       </div>
       <Rating initialRating={4} />
       <RadioButtonGroup options={options} name={'radio'} />

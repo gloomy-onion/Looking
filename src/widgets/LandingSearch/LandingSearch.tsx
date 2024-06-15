@@ -1,25 +1,44 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import styles from './LandingSearch.module.scss';
 import { Button, PickDate, Typography } from '../../ui-kit';
-import { QuantitySelector } from "../index";
+import { QuantitySelector } from '../index';
 
-const initialGuests = [
-  { value: 'adults', label: 'Взрослые' },
-  { value: 'children', label: 'Дети' },
-  { value: 'newborn', label: 'Младенцы' }
-];
+type Guest = {
+  value: string;
+  label: string;
+  count: number;
+};
 
-export const LandingSearch = () => {
-  const [guests, setGuests] = useState(initialGuests);
+type LandingSearchProps = {
+  guests: Guest[];
+  onClickClear: () => void;
+  onClickApply: () => void;
+  onClickPlus: () => void;
+  onClickMinus: () => void;
+};
 
+export const LandingSearch = ({
+  guests,
+  onClickApply,
+  onClickClear,
+  onClickMinus,
+  onClickPlus,
+}: LandingSearchProps) => {
   return (
     <div className={styles.landingSearchContainer}>
       <Typography weight={700} size={'l'} color={'dark100'}>
         Найдём номера под ваши пожелания
       </Typography>
       <PickDate label={'прибытие'} />
-      <QuantitySelector items={guests} label={'Гости'} />
+      <QuantitySelector
+        onClickMinus={onClickMinus}
+        onClickPlus={onClickPlus}
+        items={guests}
+        label={'Гости'}
+        onClickApply={onClickApply}
+        onClickClear={onClickClear}
+      />
       <Button label={'Забронировать'} buttonType={'withIcon'} />
     </div>
   );

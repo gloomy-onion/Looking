@@ -9,14 +9,26 @@ type BookingProps = {
   price: number;
   roomNum: number;
   duration: number;
-}
+  onClickClear: () => void;
+  onClickApply: () => void;
+  onClickPlus: () => void;
+  onClickMinus: () => void;
+};
 const initialGuests = [
-  { value: 'adults', label: 'Взрослые' },
-  { value: 'children', label: 'Дети' },
-  { value: 'newborn', label: 'Младенцы' }
+  { value: 'adults', label: 'Взрослые', count: 0 },
+  { value: 'children', label: 'Дети', count: 0 },
+  { value: 'newborn', label: 'Младенцы', count: 0 },
 ];
 
-export const Booking = ({ price, roomNum, duration }: BookingProps) => {
+export const Booking = ({
+  price,
+  roomNum,
+  duration,
+  onClickClear,
+  onClickApply,
+  onClickPlus,
+  onClickMinus,
+}: BookingProps) => {
   const [guests, setGuests] = useState(initialGuests);
 
   return (
@@ -25,7 +37,13 @@ export const Booking = ({ price, roomNum, duration }: BookingProps) => {
         <RoomNumPrice price={price} roomNum={roomNum} lux />
       </div>
       <PickDate label={'прибытие'} />
-      <QuantitySelector items={guests} />
+      <QuantitySelector
+        items={guests}
+        onClickMinus={onClickMinus}
+        onClickPlus={onClickPlus}
+        onClickApply={onClickApply}
+        onClickClear={onClickClear}
+      />
       <div className={styles.bookingInfo}>
         <Typography size={'s'} color={'dark75'}>{`${price}₽ x ${duration} суток`}</Typography>
         <Typography size={'s'} color={'dark75'}>{`${price * duration}₽`}</Typography>
