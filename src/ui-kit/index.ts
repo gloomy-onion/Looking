@@ -16,3 +16,4 @@ export { Pagination } from './Pagination/Pagination';
 export { RadioButtonGroup } from './Button/RadioButton/RadioButtonGroup';
 export { QuantityItem } from './QuantityItem/QuantityItem';
 export { ImageCarousel } from './ImageCarousel/ImageCarousel';
+export { DropdownDatePickers } from './DropownDatePickers/DropdownDatePickers';

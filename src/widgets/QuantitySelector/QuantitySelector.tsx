@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import styles from './QuantitySelector.module.scss';
 import { Button, DropdownContainer, QuantityItem } from '../../ui-kit';
@@ -19,8 +19,10 @@ type QuantitySelectorProps = {
 };
 
 export const QuantitySelector = ({ items, label, onClickClear, onClickApply, onClickPlus, onClickMinus }: QuantitySelectorProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <DropdownContainer placeholder={'Сколько гостей'} label={label}>
+    <DropdownContainer placeholder={'Сколько гостей'} label={label} setOpen={setIsOpen} open={isOpen}>
       {items.map(({ value, label, count }) => (
         <QuantityItem key={value} label={label} count={count} onClickPlus={onClickPlus} onClickMinus={onClickMinus}/>
       ))}

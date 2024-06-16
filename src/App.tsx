@@ -11,8 +11,7 @@ import {
   RangeSlider,
   Rating,
 } from './ui-kit';
-import { Booking, LoginForm,  Registration, RoomCard } from './widgets';
-
+import {  LoginForm,  Registration, RoomCard } from './widgets';
 
 const options = [
   { value: 'option1', label: 'option 1' },

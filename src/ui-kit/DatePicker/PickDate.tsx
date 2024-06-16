@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { ru } from 'date-fns/locale/ru';
-import React from 'react';
+import React, { useState } from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -23,12 +23,18 @@ type DatePickerProps = {
 registerLocale('ru', ru);
 
 export const PickDate: React.FC<DatePickerProps> = ({ label, value, onChange, startDate, endDate, ...otherProps }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const { today, midnightToday } = getToday();
 
-// TODO: посмотри как можно сделать двойной
   return (
     <>
-      <DropdownContainer value={getDateValue(startDate, endDate)} placeholder={PLACEHOLDER} label={label}>
+      <DropdownContainer
+        open={isOpen}
+        setOpen={setIsOpen}
+        value={getDateValue(startDate, endDate)}
+        placeholder={PLACEHOLDER}
+        label={label}
+      >
         <DatePicker
           {...otherProps}
           locale="ru"

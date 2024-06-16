@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import styles from './Dropdown.module.scss';
 import { Typography } from '../Typography/Typography';
@@ -9,16 +9,20 @@ type DropdownProps = {
   children?: React.ReactNode;
   value?: string | null;
   placeholder?: string | null;
+  open?: boolean;
+  setOpen: (value: boolean) => void;
+  onClick?: () => void;
 };
 
 type ComposedPath = () => Node[];
 
-export const DropdownContainer = ({ label, children, value, placeholder }: DropdownProps) => {
-  const [showDropDown, setShowDropDown] = useState(false);
+export const DropdownContainer = ({ label, children, value, placeholder, open, setOpen, onClick }: DropdownProps) => {
+
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropDown = () => {
-    setShowDropDown((prevState) => !prevState);
+    setOpen(!open);
+    onClick && onClick();
   };
 
   const handleClickOutside = (e: MouseEvent) => {
@@ -28,7 +32,7 @@ export const DropdownContainer = ({ label, children, value, placeholder }: Dropd
     };
     const path = event.path || (e.composedPath && e.composedPath());
     if (path && !path.includes(dropdownRef.current as Node)) {
-      setShowDropDown(false);
+      setOpen(false);
     }
   };
 
@@ -47,8 +51,8 @@ export const DropdownContainer = ({ label, children, value, placeholder }: Dropd
       <div className={styles.dropdownBox}>
         <div
           className={cn(styles.dropdown, {
-            [styles.dropdownTopExpanded]: showDropDown,
-            [styles.dropdownDefault]: !showDropDown,
+            [styles.dropdownTopExpanded]: open,
+            [styles.dropdownDefault]: !open,
           })}
           onClick={(e) => {
             e.stopPropagation();
@@ -58,9 +62,9 @@ export const DropdownContainer = ({ label, children, value, placeholder }: Dropd
           <Typography color={'dark75'} size={'s'}>
             {value || placeholder}
           </Typography>
-          <button className={showDropDown ? styles.arrowExpanded : styles.arrow} />
+          <button className={open ? styles.arrowExpanded : styles.arrow} />
         </div>
-        {showDropDown && (
+        {open && (
           <div ref={dropdownRef} className={styles.dropdownExpanded}>
             {children}
           </div>
