@@ -1,0 +1,1 @@
+export { LandingSearch } from './LandingSearch';

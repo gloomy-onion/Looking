@@ -1,0 +1,1 @@
+export { RoomNumPrice } from './RoomNumPrice';
