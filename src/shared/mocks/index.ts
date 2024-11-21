@@ -1,0 +1,1 @@
+export { roomImg } from './roomImg';

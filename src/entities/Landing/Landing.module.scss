@@ -1,0 +1,30 @@
+.landingImage {
+  width: 100%;
+}
+
+.landingSearch {
+  position: absolute;
+  left: 140px;
+  top: 130px
+}
+
+@media (max-width: 945px) {
+  .landingSearch {
+    left: 70px;
+    top: 65px;
+  }
+}
+
+@media (max-width: 760px) {
+  .landingSearch {
+    left: 35px;
+    top: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .landingSearch {
+    top: 5px;
+    left: 3%;
+  }
+}

@@ -1,0 +1,196 @@
+button {
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 19px 13px;
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled] {
+  animation: none;
+  opacity: 0.5;
+  transition: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+button:active:not([disabled]) {
+  transform: scale(.96)
+}
+
+.outline {
+  justify-content: center;
+  width: 99px;
+  height: 44px;
+  align-items: center;
+  background: linear-gradient(#fff, #fff) padding-box,
+  var(--purpleGradient);
+  border: 2px solid transparent;
+  border-radius: 30px;
+}
+
+.outline:hover:not([disabled]) {
+  box-shadow: 0 0 10px 0 var(--purple) inset;
+  transform: scale(1.04)
+}
+
+.outline:active:not([disabled]) {
+  transform: scale(.96)
+}
+
+.filled {
+  height: 44px;
+  border-radius: 30px;
+  border: none;
+  background: var(--purpleGradient);
+  color: white;
+}
+
+
+.filled:hover:not([disabled]) {
+  box-shadow: 0 0 10px 0 var(--purple);
+  transform: scale(1.04)
+}
+
+.filled:active:not([disabled]) {
+  transform: scale(.99)
+}
+
+.clear {
+  color: var(--purple);
+  border: none;
+  background: none;
+  margin: 5px;
+  padding: 5px;
+}
+
+.withIcon {
+  justify-content: center;
+  width: 320px;
+  height: 44px;
+  border-radius: 30px;
+  border: none;
+  background: var(--purpleGradient);
+  color: white;
+  position: relative;
+}
+
+.withIcon:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  right: 17px;
+}
+
+.withIcon:after {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  margin-left: 20px;
+  position: absolute;
+  right: 17px;
+}
+
+.withIcon:hover:not([disabled]) {
+  box-shadow: 0 0 10px 0 var(--purple);
+  transform: scale(1.04)
+}
+
+.withIcon:active:not([disabled]) {
+  transform: scale(.99)
+}
+
+
+.next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--greenGradient);
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.next:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  right: 13px;
+  top: 50%
+}
+
+.next:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  right: 3px;
+  top: 15px;
+  left: 14px;
+}
+
+.previous {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--greenGradient);
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.previous:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  right: 13px;
+  top: 50%
+}
+
+.previous:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(225deg);
+  right: 3px;
+  top: 15px;
+  left: 11px;
+}
+
+.active {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: var(--purpleGradient);
+}
+
+.disabled {
+  background: var(--dark25);
+  cursor: not-allowed;
+}

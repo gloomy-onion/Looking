@@ -1,0 +1,40 @@
+.typography {
+  font-family: Montserrat, sans-serif;
+  cursor: inherit;
+}
+
+.dark100 {
+  color: var(--dark100);
+}
+
+.dark75 {
+  color: var(--dark75);
+}
+
+.dark50 {
+  color: var(--dark50);
+}
+
+.dark25 {
+  color: var(--dark25);
+}
+
+.dark5 {
+  color: var(--dark5);
+}
+
+.green {
+  color: var(--green);
+}
+
+.purple {
+  color: var(--purple);
+}
+
+.white {
+  color: rgb(255, 255, 255);
+}
+
+.upperCase {
+  text-transform: uppercase;
+}
